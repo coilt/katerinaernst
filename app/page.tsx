@@ -27,7 +27,7 @@ const tabs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full bg-[url('../public/images/decoration/photographer.jpg')] bg-top bg-cover">
+    <div className="flex flex-col h-full bg-[url('')] bg-top bg-cover">
       <Head>
         <title>Katerina Ernst Filmmaker Photographer</title>
         <meta name="description" content="next app" />
