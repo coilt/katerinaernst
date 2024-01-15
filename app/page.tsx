@@ -7,7 +7,7 @@ return (
 
 <div>
 <Head>
-  <title>katerinaernst.com filmmaker photographer</title>
+  <title>Katerina Ernst Filmmaker Photographer</title>
    <meta name="description" content="next app" />
   <link rel='icon' href='/favicon.ico'/>
 
