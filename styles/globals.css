@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer {
+  html, 
+  body {
+    height: 100%;
+  }
+
+  #__next {
+    height: 100%;
+  }
+
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
