@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
 
       <header className="flex justify-between items-center h-[90px] px-6">
-        <div className="contents-center">Katerina Ernst</div>
+        <div className="contents-center font-body text-1xl">Katerina Ernst</div>
         <Link
           href="mailto:vocalaboca@gmail.com"
           className="rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90"
@@ -45,7 +45,7 @@ export default function Home() {
       </header>
 
       <main className="grow">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center h-full">
           <Tab.Group>
             <Tab.List className="flex items-centered gap-12">
               {tabs.map((tab) => (
@@ -60,9 +60,9 @@ export default function Home() {
                 </Tab>
               ))}
             </Tab.List>
-            <Tab.Panels>
-              <Tab.Panel>All photos</Tab.Panel>
-              <Tab.Panel>Portraits</Tab.Panel>
+            <Tab.Panels className="h-full w-full bg-zinc-800 max-w-[1200px]  p-2 sm:p-4 my-8 bg-opacity-30">
+              <Tab.Panel className="font-body text-1xl">All photos</Tab.Panel>
+              <Tab.Panel className="font-body text-1xl">Portraits</Tab.Panel>
               <Tab.Panel>Videos</Tab.Panel>
               <Tab.Panel>About Me</Tab.Panel>
             </Tab.Panels>
