@@ -15,7 +15,7 @@ return (
 
   
 
- <main className='text-red-300'>
+ <main className='text-red-100'>
 <p>Placeholder for main</p>
  </main>
 
