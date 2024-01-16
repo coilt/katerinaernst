@@ -7,6 +7,7 @@ import Link from "next/link";
 import Masonry from "react-masonry-css";
 import { paragraphFont, titleFont } from "./utils/fonts.js";
 
+/*Image component import*/
 import all1 from "../public/images/elvira_01.jpg";
 import all2 from "../public/images/elvira_02.jpg";
 import all3 from "../public/images/elvira_03.jpg";
@@ -42,6 +43,8 @@ const tabs = [
     display: "About",
   },
 ];
+
+const images = [all1, all2, all3, all4, all5, all6, all7, all8, all9, all10];
 
 export default function Home() {
   return (
@@ -83,16 +86,15 @@ export default function Home() {
                   className="flex gap-4"
                   columnClassName=""
                 >
-                  <Image src={all1} className="my-4" alt="elvira_01" />
-                  <Image src={all2} className="my-4" alt="elvira_02" />
-                  <Image src={all3} className="my-4" alt="elvira_03" />
-                  <Image src={all4} className="my-4" alt="elvira_04" />
-                  <Image src={all5} className="my-4" alt="elvira_05" />
-                  <Image src={all6} className="my-4" alt="elvira_06" />
-                  <Image src={all7} className="my-4" alt="elvira_07" />
-                  <Image src={all8} className="my-4" alt="elvira_08" />
-                  <Image src={all9} className="my-4" alt="elvira_09" />
-                  <Image src={all10} className="my-4" alt="elvira_10" />
+                  {images.map((image) => (
+                    <Image
+                      key={image.src}
+                      src={image}
+                      className="my-4"
+                      alt="elvira_01"
+                      placeholder="blur"
+                    />
+                  ))}
                 </Masonry>
               </Tab.Panel>
               <Tab.Panel>Portraits</Tab.Panel>
