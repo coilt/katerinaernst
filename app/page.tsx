@@ -44,12 +44,12 @@ export default function Home() {
         </Link>
       </header>
 
-      <main className="grow">
+      <main className="grow ">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
             <Tab.List className="flex items-centered gap-12">
               {tabs.map((tab) => (
-                <Tab key={tab.key} className="p-2">
+                <Tab key={tab.key} className="p-2 font-body text-1xl uppercase ">
                   {({ selected }) => (
                     <span
                       className={selected ? "text-white" : "text-stone-600"}
@@ -61,8 +61,8 @@ export default function Home() {
               ))}
             </Tab.List>
             <Tab.Panels className="h-full w-full bg-zinc-800 max-w-[1200px]  p-2 sm:p-4 my-8 bg-opacity-30">
-              <Tab.Panel className="font-body text-1xl">All photos</Tab.Panel>
-              <Tab.Panel className="font-body text-1xl">Portraits</Tab.Panel>
+              <Tab.Panel>All photos</Tab.Panel>
+              <Tab.Panel>Portraits</Tab.Panel>
               <Tab.Panel>Videos</Tab.Panel>
               <Tab.Panel>About Me</Tab.Panel>
             </Tab.Panels>
