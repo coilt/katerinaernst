@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Masonry from 'react-masonry-css';
+import { paragraphFont, titleFont } from "./utils/fonts.js";
 
 const tabs = [
   {
@@ -35,7 +36,7 @@ export default function Home() {
   return (
     
 
-    <div className="h-full bg-[url('')] bg-top bg-cover overflow-auto">
+    <div className="h-full overflow-auto">
       <Head>
         <title>Katerina Ernst Filmmaker Photographer</title>
         <meta name="description" content="next app" />
@@ -46,7 +47,7 @@ export default function Home() {
         <div className="contents-center font-body text-1xl">Katerina Ernst</div>
         <Link
           href="mailto:vocalaboca@gmail.com"
-          className="rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90 "
+          className="rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90"
         >
           Get in touch
         </Link>
@@ -56,7 +57,7 @@ export default function Home() {
           <Tab.Group>
             <Tab.List className="flex items-centered gap-12">
               {tabs.map((tab) => (
-                <Tab key={tab.key} className="p-2 font-body text-1xl uppercase ">
+                <Tab key={tab.key} className="p-2 uppercase">
                   {({ selected }) => (
                     <span
                       className={selected ? "text-white" : "text-stone-600"}
@@ -67,7 +68,7 @@ export default function Home() {
                 </Tab>
               ))}
             </Tab.List>
-            <Tab.Panels className="h-full w-full bg-zinc-800 max-w-[1200px]  p-2 sm:p-4 my-8 bg-opacity-30">
+            <Tab.Panels className="h-full w-full bg-zinc-800 max-w-[1200px]  p-2 sm:p-4 my-8 bg-opacity-30 ">
               <Tab.Panel>
               <Masonry breakpointCols={2} className="flex gap-4" columnClassName="">
                 <img src="./images/elvira_01.jpg" alt="" className="my-4" ></img>
@@ -91,8 +92,8 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="h-[60px] flex justify-center items-center">
-        <p>Katerina Ernst Filmmaker | Photographer</p>
+      <footer className="h-[60px] flex justify-center items-center text-stone-600">
+        <p className={paragraphFont.className}>Katerina Ernst  ©  2012 — 2024</p>
       </footer>
   </div>
 
