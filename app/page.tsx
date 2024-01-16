@@ -43,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
 
              </Head>                         
-      <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-6">
+      <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-20">
         <div className="contents-center font-body text-1xl">Katerina Ernst</div>
         <Link
           href="mailto:vocalaboca@gmail.com"
