@@ -4,7 +4,7 @@ const getImages = () => {
     const imageContext = require.context(
       "/public/images",
       false,
-      /\.(png|jpe?g|gif|svg)$/
+      /\.(jpg|JPG|png|jpe?g|gif|svg)$/
     );
     const imageFiles = imageContext.keys();
 
