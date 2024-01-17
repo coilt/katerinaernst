@@ -11,13 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@next/font": "^14.0.4",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "git-filter-repo": "^0.0.30",
-=======
->>>>>>> 935074fb3f7751f9f3a856c8f21448b2a5c681d3
-=======
->>>>>>> 935074fb3f7751f9f3a856c8f21448b2a5c681d3
     "lightgallery": "^2.7.2",
     "next": "14.0.4",
     "react": "^18",

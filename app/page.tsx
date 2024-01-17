@@ -1,11 +1,13 @@
+// Your Home component
 "use client";
 import React, { useRef } from "react";
 import { Tab } from "@headlessui/react";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
-import { paragraphFont, titleFont } from "./utils/fonts.js";
+import { paragraphFont } from "./utils/fonts.js";
+import { titleFont } from "./utils/fonts.js";
+import getImages from "./utils/getImages"; // no need for .ts or .tsx extension
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -15,7 +17,6 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
-import images from "./utils/imageImporter.js";
 
 const tabs = [
   {
@@ -26,7 +27,6 @@ const tabs = [
     key: "Video",
     display: "Video",
   },
-
   {
     key: "about me",
     display: "About",
@@ -35,6 +35,9 @@ const tabs = [
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
+
+  const images = getImages();
+  console.log(images);
 
   return (
     <div className="h-full overflow-auto">
@@ -76,12 +79,11 @@ export default function Home() {
                   columnClassName=""
                 >
                   {images.map((image, idx) => (
-                    <Image
+                    <img
                       key={image.src}
-                      src={image}
+                      src={image.src}
                       className="my-4 hover:opacity-70 cursor-pointer"
-                      alt="elvira_01"
-                      placeholder="blur"
+                      alt={`Image ${idx + 1}`}
                       onClick={() => {
                         lightboxRef.current?.openGallery(idx);
                       }}
@@ -104,8 +106,6 @@ export default function Home() {
                   }))}
                 ></LightGalleryComponent>
               </Tab.Panel>
-              <Tab.Panel></Tab.Panel>
-              <Tab.Panel>Events</Tab.Panel>
               <Tab.Panel>Videos</Tab.Panel>
               <Tab.Panel className=" flex justify-center">
                 <div className="w-[600px]">
