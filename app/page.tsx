@@ -1,5 +1,11 @@
 // Your Home component
-"use client";
+
+export const metadata = {
+  title: "My new title",
+  description: "My description",
+};
+
+("use client");
 import React, { useRef } from "react";
 import { Tab } from "@headlessui/react";
 import Head from "next/head";
@@ -192,8 +198,3 @@ export default function Home() {
     </div>
   );
 }
-
-export const metadata = {
-  title: "Katerina Ernst Filmmaker Photographer",
-  description: "Katerina's portfolio web page",
-};
