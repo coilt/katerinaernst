@@ -192,3 +192,8 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Katerina Ernst Filmmaker Photographer",
+  description: "Katerina's portfolio web page",
+};
