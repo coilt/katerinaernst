@@ -19,26 +19,17 @@ import images from "./utils/imageImporter.js";
 
 const tabs = [
   {
-    key: "all",
-    display: "All",
+    key: "Photo",
+    display: "Photo",
   },
   {
-    key: "people",
-    display: "People",
-  },
-
-  {
-    key: "events",
-    display: "Events",
-  },
-  {
-    key: "videos",
-    display: "Videos",
+    key: "peoVideo",
+    display: "Video",
   },
 
   {
-    key: "about me",
-    display: "About",
+    key: "About Me",
+    display: "About Me",
   },
 ];
 
@@ -90,32 +81,14 @@ export default function Home() {
                       src={image}
                       className="my-4 hover:opacity-70 cursor-pointer"
                       alt="elvira_01"
-                      placeholder="blur"
                       onClick={() => {
                         lightboxRef.current?.openGallery(idx);
                       }}
                     />
                   ))}
                 </Masonry>
-
-                <LightGalleryComponent
-                  onInit={(ref) => {
-                    if (ref) {
-                      lightboxRef.current = ref.instance;
-                    }
-                  }}
-                  speed={500}
-                  plugins={[lgThumbnail, lgZoom]}
-                  dynamic
-                  dynamicEl={images.map((image) => ({
-                    src: image.src,
-                    thumb: image.thumb,
-                  }))}
-                ></LightGalleryComponent>
               </Tab.Panel>
-              <Tab.Panel></Tab.Panel>
-              <Tab.Panel>Events</Tab.Panel>
-              <Tab.Panel>Videos</Tab.Panel>
+              <Tab.Panel>Video</Tab.Panel>
               <Tab.Panel className=" flex justify-center">
                 <div className="w-[600px]">
                   <p className={`my-4 ${paragraphFont.className}`}>

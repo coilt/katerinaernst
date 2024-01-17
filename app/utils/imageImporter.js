@@ -3,7 +3,7 @@
 const imageContext = require.context(
   "/public/images",
   false,
-  /\.(jpg|png|jpe?g|svg)$/
+  /\.(JPG|jpg|png|jpe?g|svg)$/
 );
 
 const images = imageContext.keys().map(imageContext);
