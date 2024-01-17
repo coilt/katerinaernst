@@ -1,10 +1,4 @@
 // Your Home component
-
-export const metadata = {
-  title: "My new title",
-  description: "My description",
-};
-
 ("use client");
 import React, { useRef } from "react";
 import { Tab } from "@headlessui/react";
