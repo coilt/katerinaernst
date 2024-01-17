@@ -5,9 +5,9 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const antonio = Antonio({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Katerina Ernst",
-  description: "layout-metadata",
+  description: "Katerina Ernst Filmmaker Photographer",
 };
 
 export default function RootLayout({
