@@ -1,5 +1,5 @@
 // Your Home component
-("use client");
+"use client";
 import React, { useRef } from "react";
 import { Tab } from "@headlessui/react";
 import Head from "next/head";
