@@ -15,18 +15,7 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
-
-// Image component import
-import all1 from "../public/images/elvira_01.jpg";
-import all2 from "../public/images/elvira_02.jpg";
-import all3 from "../public/images/elvira_03.jpg";
-import all4 from "../public/images/elvira_04.jpg";
-import all5 from "../public/images/elvira_05.jpg";
-import all6 from "../public/images/elvira_06.jpg";
-import all7 from "../public/images/elvira_07.jpg";
-import all8 from "../public/images/elvira_08.jpg";
-import all9 from "../public/images/elvira_09.jpg";
-import all10 from "../public/images/elvira_10.jpg";
+import images from "./utils/imageImporter.js";
 
 const tabs = [
   {
@@ -52,8 +41,6 @@ const tabs = [
     display: "About",
   },
 ];
-
-const images = [all1, all2, all3, all4, all5, all6, all7, all8, all9, all10];
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
@@ -122,7 +109,7 @@ export default function Home() {
                   dynamic
                   dynamicEl={images.map((image) => ({
                     src: image.src,
-                    thumb: image.src,
+                    thumb: image.thumb,
                   }))}
                 ></LightGalleryComponent>
               </Tab.Panel>
