@@ -11,10 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@next/font": "^14.0.4",
-    "bfg": "^0.3.0",
     "lightgallery": "^2.7.2",
     "next": "14.0.4",
-    "next-cloudinary": "^5.18.0",
     "react": "^18",
     "react-dom": "^18",
     "react-masonry-css": "^1.0.16"
