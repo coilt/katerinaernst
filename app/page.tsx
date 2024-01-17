@@ -43,7 +43,7 @@ export default function Home() {
     <div className="h-full overflow-auto">
       <Head>
         <title>Katerina Ernst Filmmaker Photographer</title>
-        <meta name="description" content="next app" />
+        <meta name="Katerina Ernst Filmmaker" content="next app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-20">
