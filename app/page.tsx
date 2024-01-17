@@ -18,11 +18,6 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-export const metadata = {
-  title: "Katerina Ernst Filmmaker Photographer",
-  description: "My description",
-};
-
 const tabs = [
   {
     key: "Photo",
