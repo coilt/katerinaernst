@@ -73,13 +73,33 @@ export default function Home() {
             </Tab.List>
             <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
               <Tab.Panel>
+                <style jsx>{`
+                  .image-container {
+                    overflow: hidden; /* Clip the content to the rounded boundaries */
+                    border-radius: 16px; /* Set the border-radius for the container */
+                  }
+
+                  .hover-zoom {
+                    transition: transform 0.8s ease;
+                    border-radius: 16px; /* Set the border-radius for the image */
+                    overflow: hidden; /* Hide overflowing content */
+                  }
+
+                  .hover-zoom:hover {
+                    transform: scale(1.05);
+                  }
+                `}</style>
+
                 <Masonry
                   breakpointCols={{ default: 2, 700: 1 }}
                   className="flex gap-4"
                   columnClassName="my-masonry-grid-column"
                 >
                   {images.map((image, idx) => (
-                    <div key={image.src} className="relative overflow-hidden">
+                    <div
+                      key={image.src}
+                      className="relative overflow-hidden image-container"
+                    >
                       <img
                         src={image.src}
                         className="my-2 cursor-pointer hover-zoom"
@@ -91,16 +111,6 @@ export default function Home() {
                     </div>
                   ))}
                 </Masonry>
-
-                <style jsx>{`
-                  .hover-zoom {
-                    transition: transform 0.8s ease;
-                  }
-
-                  .hover-zoom:hover {
-                    transform: scale(1.05);
-                  }
-                `}</style>
 
                 <LightGalleryComponent
                   onInit={(ref) => {
