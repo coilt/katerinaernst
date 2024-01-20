@@ -82,7 +82,7 @@ export default function Home() {
                     <div key={image.src} className="relative overflow-hidden">
                       <img
                         src={image.src}
-                        className="my-4 cursor-pointer hover-zoom"
+                        className="my-2 cursor-pointer hover-zoom"
                         alt={`Image ${idx + 1}`}
                         onClick={() => {
                           lightboxRef.current?.openGallery(idx);
