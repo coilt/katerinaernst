@@ -74,9 +74,9 @@ export default function Home() {
             <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
               <Tab.Panel>
                 <Masonry
-                  breakpointCols={2}
+                  breakpointCols={{ default: 2, 700: 1 }}
                   className="flex gap-4"
-                  columnClassName=""
+                  columnClassName="my-masonry-grid-column"
                 >
                   {images.map((image, idx) => (
                     <img
@@ -98,7 +98,9 @@ export default function Home() {
                     }
                   }}
                   speed={500}
-                  plugins={[lgThumbnail, lgZoom]}
+                  download={false}
+                  counter={false}
+                  plugins={[lgThumbnail]}
                   dynamic
                   dynamicEl={images.map((image) => ({
                     src: image.src,
@@ -114,7 +116,7 @@ export default function Home() {
                 <div className="w-[600px]">
                   {" "}
                   <img
-                    src="katerina_portrait_opt.jpg"
+                    src="katerina_portrait.jpg"
                     alt="Katerina's self-portrait"
                   />
                   <p className={`my-16 ${paragraphFont.className}`}>

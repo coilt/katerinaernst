@@ -8,11 +8,19 @@ const getImages = () => {
     );
     const imageFiles = imageContext.keys();
 
-    const images = imageFiles.map((file) => ({
-      src: `/images/${file.replace("./", "")}`,
-    }));
+    // Extract file names and create image objects
+    const images = imageFiles.map((file) => {
+      const fileName = file.replace("./", "");
+      return {
+        src: `/images/${fileName}`,
+        name: fileName, // Add the name property
+      };
+    });
 
-    return images;
+    // Sort images based on the name property
+    const sortedImages = images.sort((a, b) => a.name.localeCompare(b.name));
+
+    return sortedImages;
   } catch (error) {
     console.error("Error reading images:", error);
     return [];
