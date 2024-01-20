@@ -11,9 +11,7 @@
   #__next {
     height: 100%;
   }
-
 }
-
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -39,8 +37,4 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-
- 
-  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200;300&display=swap');
- 
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200;300&display=swap");

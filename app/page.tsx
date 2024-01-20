@@ -106,10 +106,15 @@ export default function Home() {
                   }))}
                 ></LightGalleryComponent>
               </Tab.Panel>
-              <Tab.Panel>Videos</Tab.Panel>
+              <Tab.Panel></Tab.Panel>
               <Tab.Panel className=" flex justify-center">
                 <div className="w-[600px]">
-                  <p className={`my-4 ${paragraphFont.className}`}>
+                  {" "}
+                  <img
+                    src="katerina_portrait_opt.jpg"
+                    alt="Katerina's self-portrait"
+                  />
+                  <p className={`my-16 ${paragraphFont.className}`}>
                     Newton was born in Berlin, the son of Klara Claire (née
                     Marquis) and Max Neustädter, a button factory owner. His
                     family was Jewish. Newton attended the
@@ -130,7 +135,6 @@ export default function Home() {
                     remain there, first briefly as a photographer for the
                     Straits Times and then as a portrait photographer.
                   </p>
-
                   <p className={` my-4 ${paragraphFont.className}`}>
                     Newton and his wife finally settled in Paris in 1961 and the
                     work continued as a fashion photographer. His images
