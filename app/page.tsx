@@ -79,17 +79,28 @@ export default function Home() {
                   columnClassName="my-masonry-grid-column"
                 >
                   {images.map((image, idx) => (
-                    <img
-                      key={image.src}
-                      src={image.src}
-                      className="my-4 hover:opacity-70 cursor-pointer"
-                      alt={`Image ${idx + 1}`}
-                      onClick={() => {
-                        lightboxRef.current?.openGallery(idx);
-                      }}
-                    />
+                    <div key={image.src} className="relative overflow-hidden">
+                      <img
+                        src={image.src}
+                        className="my-4 cursor-pointer hover-zoom"
+                        alt={`Image ${idx + 1}`}
+                        onClick={() => {
+                          lightboxRef.current?.openGallery(idx);
+                        }}
+                      />
+                    </div>
                   ))}
                 </Masonry>
+
+                <style jsx>{`
+                  .hover-zoom {
+                    transition: transform 0.8s ease;
+                  }
+
+                  .hover-zoom:hover {
+                    transform: scale(1.05);
+                  }
+                `}</style>
 
                 <LightGalleryComponent
                   onInit={(ref) => {
