@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-import { Antonio, Inter } from "next/font/google";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  openGraph: {
+    title: "Katerina Ernst Filmmaker | Photographer",
+    description: "Filmmaker | Photographer portfolio",
+  },
+};
+
 import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const antonio = Antonio({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Katerina Ernst",
-  description: "Katerina Ernst Filmmaker Photographer",
-};
 
 export default function RootLayout({
   children,

@@ -5,8 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
 import { paragraphFont } from "./utils/fonts.js";
-import { titleFont } from "./utils/fonts.js";
-import getImages from "./utils/getImages"; // no need for .ts or .tsx extension
+import getImages from "./utils/getImages";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -15,7 +14,6 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
 
 const tabs = [
   {
@@ -46,10 +44,7 @@ export default function Home() {
           name="Katerina Ernst Filmmaker"
           content="Katerina Ernst Filmmaker Photographer"
         />
-        <meta property="og:title" />
-        <meta property="og:description" content="Description of your page" />
-        <meta property="og:image" content="/public/katerina_portrait.jpg" />
-        <meta property="og:url" content="www.katerinaernst.com" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
