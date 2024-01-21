@@ -44,7 +44,7 @@ export default function Home() {
           name="Katerina Ernst Filmmaker | Photographer"
           content="Katerina Ernst Filmmaker Photographer portfolio site"
         />
-
+        <meta property="og:image" content="<generated>" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
