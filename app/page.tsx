@@ -1,4 +1,3 @@
-// Your Home component
 "use client";
 import React, { useRef } from "react";
 import { Tab } from "@headlessui/react";
@@ -43,7 +42,14 @@ export default function Home() {
     <div className="h-full overflow-auto">
       <Head>
         <title>Katerina Ernst Filmmaker Photographer</title>
-        <meta name="Katerina Ernst Filmmaker" content="next app" />
+        <meta
+          name="Katerina Ernst Filmmaker"
+          content="Katerina Ernst Filmmaker Photographer"
+        />
+        <meta property="og:title" />
+        <meta property="og:description" content="Description of your page" />
+        <meta property="og:image" content="/public/katerina_portrait.jpg" />
+        <meta property="og:url" content="www.katerinaernst.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
