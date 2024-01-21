@@ -39,10 +39,10 @@ export default function Home() {
   return (
     <div className="h-full overflow-auto">
       <Head>
-        <title>Katerina Ernst Filmmaker Photographer</title>
+        <title>Katerina Ernst Filmmaker | Photographer</title>
         <meta
-          name="Katerina Ernst Filmmaker"
-          content="Katerina Ernst Filmmaker Photographer"
+          name="Katerina Ernst Filmmaker | Photographer"
+          content="Katerina Ernst Filmmaker Photographer portfolio site"
         />
 
         <link rel="icon" href="/favicon.ico" />

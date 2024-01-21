@@ -19,7 +19,7 @@ export default function RootLayout({
 import { Metadata } from "next";
 export const metadata: Metadata = {
   openGraph: {
-    title: "Katerina Ernst Title",
-    description: "Confide your inner thoughts and get wise advice from legends",
+    title: "Katerina Ernst Filmmaker | Photographer portfolio",
+    description: "You're gonna carry that weight",
   },
 };
