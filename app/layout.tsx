@@ -8,9 +8,6 @@ export const metadata: Metadata = {
 
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const antonio = Antonio({ subsets: ["latin"] });
-
 export default function RootLayout({
   children,
 }: {
