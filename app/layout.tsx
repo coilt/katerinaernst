@@ -20,12 +20,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   openGraph: {
     title: "Katerina Ernst Filmmaker | Photographer",
-    description: "Filmmaker and Photographer's Portfolio",
+    description: "You're gonna carry that weight",
     url: "https://KaterinaErnst.com",
     siteName: "Katerina Ernst",
     images: [
       {
-        url: "katerinaernst.com/opengraph-image.jpg",
+        url: "https://www.katerinaernst.com/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Katerina Ernst Portfolio",
