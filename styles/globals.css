@@ -22,3 +22,9 @@
 body {
   background-color: #101010; /* Set your desired background color or remove this line */
 }
+
+@layer base {
+  body {
+    @apply text-gray-300;
+  }
+}
