@@ -154,7 +154,7 @@ export default function Home() {
       </main>
 
       <footer className="h-[60px] flex justify-center items-center text-stone-600">
-        <p className={paragraphFont.className}>Katerina Ernst © 2012 — 2024</p>
+        <p className={paragraphFont.className}>Katerina Ernst © 2024</p>
       </footer>
     </div>
   );
