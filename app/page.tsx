@@ -1,19 +1,22 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 import Head from "next/head";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
 import { paragraphFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
+import VideoComponent from "./utils/videocomponent";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
 import type { LightGallery } from "lightgallery/lightgallery";
 import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-video.css";
+import "video.js/dist/video-js.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgVideo from "lightgallery/plugins/video";
 
 const tabs = [
   {
@@ -122,7 +125,7 @@ export default function Home() {
                   speed={500}
                   download={false}
                   counter={false}
-                  plugins={[lgThumbnail]}
+                  plugins={[lgThumbnail, lgVideo]}
                   dynamic
                   dynamicEl={images.map((image) => ({
                     src: image.src,
@@ -131,8 +134,26 @@ export default function Home() {
                 ></LightGalleryComponent>
               </Tab.Panel>
               <Tab.Panel className=" flex justify-center">
-                {" "}
-                Coming soon
+                <LightGalleryComponent
+                  speed={500}
+                  plugins={[lgThumbnail, lgVideo]}
+                  videojs={true}
+                >
+                  <a
+                    data-lg-size="1280-720"
+                    data-src="//vimeo.com/180157095?muted=false"
+                    data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                    data-sub-html="<h4>NIGHTFALL</h4>"
+                  >
+                    <img
+                      width="300"
+                      height="100"
+                      className="img-responsive"
+                      src="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      alt="Nightfall Thumbnail"
+                    />
+                  </a>
+                </LightGalleryComponent>
               </Tab.Panel>
               <Tab.Panel className=" flex justify-center">
                 <div className="w-[600px]">
