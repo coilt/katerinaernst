@@ -6,7 +6,7 @@ import Link from "next/link";
 import Masonry from "react-masonry-css";
 import { paragraphFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
-import VideoComponent from "./utils/videocomponent";
+import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -35,9 +35,26 @@ const tabs = [
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
+  const videoThumbnailRef = useRef<HTMLVideoElement | null>(null);
+  const [isVideoHovered, setIsVideoHovered] = useState(false);
 
   const images = getImages();
   console.log(images);
+
+  const handleVideoThumbnailHover = () => {
+    setIsVideoHovered(true);
+    if (videoThumbnailRef.current) {
+      videoThumbnailRef.current.play();
+    }
+  };
+
+  const handleVideoThumbnailLeave = () => {
+    setIsVideoHovered(false);
+    if (videoThumbnailRef.current) {
+      videoThumbnailRef.current.pause();
+      videoThumbnailRef.current.currentTime = 0;
+    }
+  };
 
   return (
     <div className="h-full overflow-auto">
@@ -145,12 +162,9 @@ export default function Home() {
                     data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
                     data-sub-html="<h4>NIGHTFALL</h4>"
                   >
-                    <img
-                      width="300"
-                      height="100"
-                      className="img-responsive"
-                      src="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                      alt="Nightfall Thumbnail"
+                    <VideoThumbnailComponent
+                      posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      videoSource="./video/v_thumb_nightfall.mp4"
                     />
                   </a>
                 </LightGalleryComponent>
