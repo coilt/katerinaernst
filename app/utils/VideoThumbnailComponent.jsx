@@ -1,4 +1,3 @@
-// VideoThumbnailComponent.jsx
 import React, { useRef, useState } from "react";
 
 const VideoThumbnailComponent = ({ posterImage, videoSource }) => {
@@ -15,10 +14,11 @@ const VideoThumbnailComponent = ({ posterImage, videoSource }) => {
   };
 
   const handleVideoThumbnailLeave = () => {
-    setIsVideoHovered(false);
     if (videoThumbnailRef.current) {
+      // Pause the video and reset currentTime
       videoThumbnailRef.current.pause();
       videoThumbnailRef.current.currentTime = 0;
+      setIsVideoHovered(false);
     }
   };
 
@@ -49,14 +49,16 @@ const VideoThumbnailComponent = ({ posterImage, videoSource }) => {
           top: "0",
           left: "0",
           opacity: isVideoHovered ? "1" : "0",
-          transition: "opacity 0.3s ease", // Adjusted the transition duration
+          transition: "opacity 0.5s ease", // Adjusted the transition duration
         }}
       >
         {videoSource && <source src={videoSource} type="video/mp4" />}
         Your browser does not support the video tag.
       </video>
       <img
-        className={`img-responsive ${isVideoHovered ? "hidden" : ""}`}
+        className={`img-responsive transition-opacity duration-600 ${
+          isVideoHovered ? "opacity-0" : "opacity-100"
+        }`}
         src={posterImage}
         alt="Video Thumbnail"
         style={{
@@ -65,8 +67,6 @@ const VideoThumbnailComponent = ({ posterImage, videoSource }) => {
           position: "absolute",
           top: "0",
           left: "0",
-          opacity: isVideoHovered ? "0" : "1",
-          transition: "opacity 0.3s ease", // Adjusted the transition duration
         }}
       />
     </div>

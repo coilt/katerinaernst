@@ -166,7 +166,7 @@ export default function Home() {
                   >
                     <VideoThumbnailComponent
                       posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                      videoSource="./video/v_thumb_nightfall.mp4"
+                      videoSource="./video/v_thumb_nightfall.webm"
                     />
                   </a>
                 </LightGalleryComponent>
