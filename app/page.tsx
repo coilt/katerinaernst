@@ -7,6 +7,7 @@ import Masonry from "react-masonry-css";
 import { paragraphFont, footerFont, buttonFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
+import FormComponent from "./utils/FormComponent";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -35,28 +36,15 @@ const tabs = [
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
-  const videoThumbnailRef = useRef<HTMLVideoElement | null>(null);
-  const [isVideoHovered, setIsVideoHovered] = useState(false);
+
+  const [showForm, setShowForm] = useState(false);
+  const handleButtonClick = () => {
+    // Toggle the state to show/hide the form
+    setShowForm(!showForm);
+  };
 
   const images = getImages();
   console.log(images);
-
-  const handleVideoThumbnailHover = () => {
-    console.log("Hovered Video Tab");
-    setIsVideoHovered(true);
-    if (videoThumbnailRef.current) {
-      videoThumbnailRef.current.play();
-    }
-  };
-
-  const handleVideoThumbnailLeave = () => {
-    console.log("Left Video Tab");
-    setIsVideoHovered(false);
-    if (videoThumbnailRef.current) {
-      videoThumbnailRef.current.pause();
-      videoThumbnailRef.current.currentTime = 0;
-    }
-  };
 
   return (
     <div className="h-full overflow-auto custom-scrollbar">
@@ -69,15 +57,23 @@ export default function Home() {
         <meta property="og:image" content="<generated>" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className=" flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
-        <div className="contents-center font-body text-1xl">Katerina Ernst</div>
-        <Link
-          href="mailto:vocalaboca@gmail.com"
-          className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90 ${buttonFont.className}`}
-        >
-          Get in touch
-        </Link>
-      </header>
+
+      <div>
+        <header className="flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
+          <div className="contents-center font-body text-1xl">
+            Katerina Ernst
+          </div>
+          <button
+            onClick={handleButtonClick}
+            className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90`}
+          >
+            Get in touch
+          </button>
+        </header>
+        {/* Render the FormComponent conditionally based on the state */}
+        {showForm && <FormComponent />}
+      </div>
+
       <main className="pt-[110px]">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
@@ -162,7 +158,7 @@ export default function Home() {
                   >
                     <a
                       data-lg-size="1280-720"
-                      data-src="//vimeo.com/180157095?muted=false"
+                      data-src="//vimeo.com/180157095"
                       data-poster="./thumbs/thumb-nightfall.webp"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
@@ -180,8 +176,8 @@ export default function Home() {
                   >
                     <a
                       data-lg-size="1280-720"
-                      data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="./thumbs/thumb-opium.webp.webp"
+                      data-src="https://youtu.be/v573oQLKV38"
+                      data-poster="./thumbs/thumb-opium.webp"
                       data-sub-html="<h4>BOXXER — OPIUM</h4>"
                     >
                       <VideoThumbnailComponent
@@ -198,7 +194,7 @@ export default function Home() {
                   >
                     <a
                       data-lg-size="1280-720"
-                      data-src="//vimeo.com/180157095?muted=false"
+                      data-src="//vimeo.com/156413267"
                       data-poster="./thumbs/thumb-alabama.webp"
                       data-sub-html="<h4>Alabama Shakes — Gimme All Your Love</h4>"
                     >
@@ -216,8 +212,8 @@ export default function Home() {
                   >
                     <a
                       data-lg-size="1280-720"
-                      data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="./thumb-cgs.webp"
+                      data-src="//vimeo.com/129055751"
+                      data-poster="./thumbs/thumb-cgs.webp"
                       data-sub-html="<h4>CGS — Tattoo Artist Promo </h4>"
                     >
                       <VideoThumbnailComponent
@@ -234,9 +230,9 @@ export default function Home() {
                   >
                     <a
                       data-lg-size="1280-720"
-                      data-src="//vimeo.com/180157095?muted=false"
+                      data-src="//vimeo.com/150533258"
                       data-poster=".thumbs/thumb-woowooki.webp"
-                      data-sub-html="<h4>WOOWOOKI — Promo </h4>"
+                      data-sub-html="<h4>WOOWOOKI — Promo</h4>"
                     >
                       <VideoThumbnailComponent
                         posterImage="./thumbs/thumb-woowooki.webp"
