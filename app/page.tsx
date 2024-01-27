@@ -260,7 +260,7 @@ export default function Home() {
                     }}
                   />
                   <p className={`my-4 ${paragraphFont.className}`}>
-                    Ever since I've picked the camera for the first time many
+                    Ever since I've picked up the camera for the first time many
                     years ago, it has been my goal to capture what even the eye
                     can't see. To me it is not just important, it's the whole
                     point — to grasp the unsayable, the unseeable. Every time I

@@ -7,6 +7,6 @@ export const titleFont = Exo_2({
 });
 
 export const paragraphFont = Noto_Sans({
-  weight: ["200", "600", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
 });
