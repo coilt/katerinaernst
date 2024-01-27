@@ -4,7 +4,7 @@ import { Tab } from "@headlessui/react";
 import Head from "next/head";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
-import { paragraphFont } from "./utils/fonts.js";
+import { paragraphFont, footerFont, buttonFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="contents-center font-body text-1xl">Katerina Ernst</div>
         <Link
           href="mailto:vocalaboca@gmail.com"
-          className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90 ${paragraphFont.className}`}
+          className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90 ${buttonFont.className}`}
         >
           Get in touch
         </Link>
@@ -267,8 +267,9 @@ export default function Home() {
                     emotion itself.
                   </p>
                   <p className={`my-4 ${paragraphFont.className}`}>
-                    That's the ultimate test — did I manage to snatch it? Or is
-                    it just a pretty picture?
+                    If that's something that you're also looking for, feel free
+                    to contact me via the contact form. Currently I live in
+                    Thailand.
                   </p>
                 </div>
               </Tab.Panel>
@@ -278,7 +279,7 @@ export default function Home() {
       </main>
 
       <footer className="h-[60px] flex justify-center items-center text-stone-600">
-        <p className={paragraphFont.className}>Katerina Ernst © 2024</p>
+        <p className={footerFont.className}>Katerina Ernst © 2024</p>
       </footer>
     </div>
   );
