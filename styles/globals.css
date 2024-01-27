@@ -29,6 +29,6 @@ body {
   }
 }
 
-body {
+.custom-scrollbar {
   overflow-y: scroll;
 }

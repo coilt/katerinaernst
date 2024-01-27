@@ -59,7 +59,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-full overflow-auto">
+    <div className="h-full overflow-auto custom-scrollbar">
       <Head>
         <title>Katerina Ernst Filmmaker | Photographer</title>
         <meta
