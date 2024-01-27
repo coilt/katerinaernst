@@ -36,41 +36,43 @@ const VideoThumbnailComponent = ({
   }, []);
 
   return (
-    <div
-      className="thumbnail-container flex my-4"
-      onMouseEnter={handleVideoThumbnailHover}
-      onMouseLeave={handleVideoThumbnailLeave}
-    >
-      <img
-        className={`img-responsive ${
-          isVideoHovered ? "hidden" : "opacity-100"
-        }`}
-        src={posterImage}
-        alt="Video Thumbnail"
-        style={{
-          width: thumbnailWidth,
-          height: thumbnailHeight,
-        }}
-      />
-      {isVideoHovered && (
-        <video
-          ref={videoThumbnailRef}
-          className="thumbnail-video active"
-          poster={posterImage}
-          preload="metadata"
-          muted
-          loop
-          autoPlay
+    <div className="grid-cols-2 gap-4 content-start">
+      <div
+        className="thumbnail-container my-0"
+        onMouseEnter={handleVideoThumbnailHover}
+        onMouseLeave={handleVideoThumbnailLeave}
+      >
+        <img
+          className={`img-responsive ${
+            isVideoHovered ? "hidden" : "opacity-100"
+          }`}
+          src={posterImage}
+          alt="Video Thumbnail"
           style={{
             width: thumbnailWidth,
             height: thumbnailHeight,
           }}
-        >
-          {videoSource && <source src={videoSource} type="video/mp4" />}
-          Your browser does not support the video tag.
-        </video>
-      )}
-      {lgThumbnailProps && <div {...lgThumbnailProps} />}
+        />
+        {isVideoHovered && (
+          <video
+            ref={videoThumbnailRef}
+            className="thumbnail-video active"
+            poster={posterImage}
+            preload="metadata"
+            muted
+            loop
+            autoPlay
+            style={{
+              width: thumbnailWidth,
+              height: thumbnailHeight,
+            }}
+          >
+            {videoSource && <source src={videoSource} type="video/mp4" />}
+            Your browser does not support the video tag.
+          </video>
+        )}
+        {lgThumbnailProps && <div {...lgThumbnailProps} />}
+      </div>
     </div>
   );
 };

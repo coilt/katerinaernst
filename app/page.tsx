@@ -156,8 +156,8 @@ export default function Home() {
                 ></LightGalleryComponent>
               </Tab.Panel>
 
-              <Tab.Panel className="flex justify-center">
-                <div className="space-x-4 flex">
+              <Tab.Panel className="flex">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 content-start">
                   <LightGalleryComponent
                     speed={500}
                     plugins={[lgThumbnail, lgVideo]}
@@ -166,7 +166,7 @@ export default function Home() {
                     <a
                       data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
@@ -174,11 +174,17 @@ export default function Home() {
                         videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
+                  </LightGalleryComponent>
 
+                  <LightGalleryComponent
+                    speed={500}
+                    plugins={[lgThumbnail, lgVideo]}
+                    videojs={true}
+                  >
                     <a
                       data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
@@ -186,11 +192,17 @@ export default function Home() {
                         videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
+                  </LightGalleryComponent>
 
+                  <LightGalleryComponent
+                    speed={500}
+                    plugins={[lgThumbnail, lgVideo]}
+                    videojs={true}
+                  >
                     <a
-                      data-lg-size="240-160-375, 400-267-480, 1600-1067"
+                      data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-c.webp"
+                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
@@ -201,11 +213,12 @@ export default function Home() {
                   </LightGalleryComponent>
                 </div>
               </Tab.Panel>
+
               <Tab.Panel className=" flex justify-center">
-                <div className="w-[600px]">
+                <div className="w-[600px] ">
                   {" "}
                   <img
-                    src="katerina_portrait.jpg"
+                    src="katerina-portrait.jpg"
                     alt="Katerina's self-portrait"
                   />
                   <p className={`my-16 ${paragraphFont.className}`}>
