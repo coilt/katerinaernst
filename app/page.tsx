@@ -151,25 +151,51 @@ export default function Home() {
                   }))}
                 ></LightGalleryComponent>
               </Tab.Panel>
+
               <Tab.Panel className="flex justify-center">
-                <LightGalleryComponent
-                  speed={500}
-                  plugins={[lgThumbnail, lgVideo]}
-                  videojs={true}
-                >
-                  <a
-                    className=" my-2"
-                    data-lg-size="1280-720"
-                    data-src="//vimeo.com/180157095?muted=false"
-                    data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                    data-sub-html="<h4>NIGHTFALL</h4>"
+                <div className="space-x-4 flex">
+                  <LightGalleryComponent
+                    speed={500}
+                    plugins={[lgThumbnail, lgVideo]}
+                    videojs={true}
                   >
-                    <VideoThumbnailComponent
-                      posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                      videoSource="./video/v_thumb_nightfall.webm"
-                    />
-                  </a>
-                </LightGalleryComponent>
+                    <a
+                      data-lg-size="1280-720"
+                      data-src="//vimeo.com/180157095?muted=false"
+                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-sub-html="<h4>NIGHTFALL</h4>"
+                    >
+                      <VideoThumbnailComponent
+                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                        videoSource="./video/v_thumb_nightfall.webm"
+                      />
+                    </a>
+
+                    <a
+                      data-lg-size="1280-720"
+                      data-src="//vimeo.com/180157095?muted=false"
+                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-sub-html="<h4>NIGHTFALL</h4>"
+                    >
+                      <VideoThumbnailComponent
+                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                        videoSource="./video/v_thumb_nightfall.webm"
+                      />
+                    </a>
+
+                    <a
+                      data-lg-size="1280-720"
+                      data-src="//vimeo.com/180157095?muted=false"
+                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-sub-html="<h4>NIGHTFALL</h4>"
+                    >
+                      <VideoThumbnailComponent
+                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                        videoSource="./video/v_thumb_nightfall.webm"
+                      />
+                    </a>
+                  </LightGalleryComponent>
+                </div>
               </Tab.Panel>
               <Tab.Panel className=" flex justify-center">
                 <div className="w-[600px]">
