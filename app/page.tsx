@@ -157,7 +157,7 @@ export default function Home() {
               </Tab.Panel>
 
               <Tab.Panel className="flex">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 content-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 content-start">
                   <LightGalleryComponent
                     speed={500}
                     plugins={[lgThumbnail, lgVideo]}

@@ -4,8 +4,6 @@ const VideoThumbnailComponent = ({
   posterImage,
   videoSource,
   lgThumbnailProps,
-  thumbnailWidth, // Custom width for both image and video
-  thumbnailHeight, // Custom height for both image and video
 }) => {
   const videoThumbnailRef = useRef(null);
   const [isVideoHovered, setIsVideoHovered] = useState(false);
@@ -48,10 +46,7 @@ const VideoThumbnailComponent = ({
           }`}
           src={posterImage}
           alt="Video Thumbnail"
-          style={{
-            width: thumbnailWidth,
-            height: thumbnailHeight,
-          }}
+          style={{}}
         />
         {isVideoHovered && (
           <video
@@ -62,10 +57,7 @@ const VideoThumbnailComponent = ({
             muted
             loop
             autoPlay
-            style={{
-              width: thumbnailWidth,
-              height: thumbnailHeight,
-            }}
+            style={{}}
           >
             {videoSource && <source src={videoSource} type="video/mp4" />}
             Your browser does not support the video tag.
