@@ -39,6 +39,7 @@ const VideoThumbnailComponent = ({
         className="thumbnail-container my-0"
         onMouseEnter={handleVideoThumbnailHover}
         onMouseLeave={handleVideoThumbnailLeave}
+        style={{ borderRadius: "10px", overflow: "hidden" }}
       >
         <img
           className={`img-responsive ${
@@ -46,7 +47,7 @@ const VideoThumbnailComponent = ({
           }`}
           src={posterImage}
           alt="Video Thumbnail"
-          style={{}}
+          style={{ width: "100%", height: "100%", borderRadius: "10px" }}
         />
         {isVideoHovered && (
           <video
@@ -57,7 +58,7 @@ const VideoThumbnailComponent = ({
             muted
             loop
             autoPlay
-            style={{}}
+            style={{ width: "100%", height: "100%", borderRadius: "10px" }}
           >
             {videoSource && <source src={videoSource} type="video/mp4" />}
             Your browser does not support the video tag.
