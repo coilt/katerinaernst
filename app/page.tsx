@@ -63,7 +63,6 @@ export default function Home() {
   return (
     <div className="h-full overflow-auto">
       <Head>
-        <script src="http://localhost:8097"></script>;
         <title>Katerina Ernst Filmmaker | Photographer</title>
         <meta
           name="Katerina Ernst Filmmaker | Photographer"
