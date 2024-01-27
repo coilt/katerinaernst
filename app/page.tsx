@@ -166,11 +166,11 @@ export default function Home() {
                     <a
                       data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
+                      data-poster="./thumbs/thumb-nightfall.webp"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
+                        posterImage="./thumbs/thumb-nightfall.webp"
                         videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
@@ -184,12 +184,12 @@ export default function Home() {
                     <a
                       data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
-                      data-sub-html="<h4>NIGHTFALL</h4>"
+                      data-poster="./thumbs/thumb-opium.webp.webp"
+                      data-sub-html="<h4>BOXXER — OPIUM</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
-                        videoSource="./video/v-thumb-nightfall.webm"
+                        posterImage="./thumbs/thumb-opium.webp"
+                        videoSource="./video/v-thumb-opium.webm"
                       />
                     </a>
                   </LightGalleryComponent>
@@ -202,12 +202,48 @@ export default function Home() {
                     <a
                       data-lg-size="1280-720"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
-                      data-sub-html="<h4>NIGHTFALL</h4>"
+                      data-poster="./thumbs/thumb-alabama.webp"
+                      data-sub-html="<h4>Alabama Shakes — Gimme All Your Love</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
-                        videoSource="./video/v-thumb-nightfall.webm"
+                        posterImage="./thumbs/thumb-alabama.webp"
+                        videoSource="./video/v-thumb-alabama.webm"
+                      />
+                    </a>
+                  </LightGalleryComponent>
+
+                  <LightGalleryComponent
+                    speed={500}
+                    plugins={[lgThumbnail, lgVideo]}
+                    videojs={true}
+                  >
+                    <a
+                      data-lg-size="1280-720"
+                      data-src="//vimeo.com/180157095?muted=false"
+                      data-poster="./thumb-cgs.webp"
+                      data-sub-html="<h4>CGS — Tattoo Artist Promo </h4>"
+                    >
+                      <VideoThumbnailComponent
+                        posterImage="./thumbs/thumb-cgs.webp"
+                        videoSource="./video/v-thumb-cgs.webm"
+                      />
+                    </a>
+                  </LightGalleryComponent>
+
+                  <LightGalleryComponent
+                    speed={500}
+                    plugins={[lgThumbnail, lgVideo]}
+                    videojs={true}
+                  >
+                    <a
+                      data-lg-size="1280-720"
+                      data-src="//vimeo.com/180157095?muted=false"
+                      data-poster=".thumbs/thumb-woowooki.webp"
+                      data-sub-html="<h4>WOOWOOKI — Promo </h4>"
+                    >
+                      <VideoThumbnailComponent
+                        posterImage="./thumbs/thumb-woowooki.webp"
+                        videoSource="./video/v-thumb-woowooki.webm"
                       />
                     </a>
                   </LightGalleryComponent>

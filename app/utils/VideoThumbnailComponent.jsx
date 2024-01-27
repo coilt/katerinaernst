@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 const VideoThumbnailComponent = ({
   posterImage,
   videoSource,
-  lgThumbnailProps,
+  lgThumbnailProps = {}, // Provide a default value
 }) => {
   const videoThumbnailRef = useRef(null);
   const [isVideoHovered, setIsVideoHovered] = useState(false);
@@ -34,7 +34,7 @@ const VideoThumbnailComponent = ({
   }, []);
 
   return (
-    <div className="grid-cols-2 gap-4 content-start">
+    <div>
       <div
         className="thumbnail-container my-0"
         onMouseEnter={handleVideoThumbnailHover}
