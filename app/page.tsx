@@ -58,8 +58,6 @@ export default function Home() {
     }
   };
 
-  console.log("Rendering Home");
-
   return (
     <div className="h-full overflow-auto">
       <Head>
@@ -83,7 +81,7 @@ export default function Home() {
       <main className="pt-[110px]">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
-            <Tab.List className="flex items-center gap-12">
+            <Tab.List className="flex items-center gap-12  z-20">
               {tabs.map((tab) => (
                 <Tab key={tab.key} className="p-2 uppercase">
                   {({ selected }) => (
