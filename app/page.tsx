@@ -7,6 +7,7 @@ import Masonry from "react-masonry-css";
 import { paragraphFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
+import VideoGallery from "./utils/VideoGallery";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -150,13 +151,14 @@ export default function Home() {
                   }))}
                 ></LightGalleryComponent>
               </Tab.Panel>
-              <Tab.Panel className=" flex justify-center">
+              <Tab.Panel className="flex justify-center">
                 <LightGalleryComponent
                   speed={500}
                   plugins={[lgThumbnail, lgVideo]}
                   videojs={true}
                 >
                   <a
+                    className=" my-2"
                     data-lg-size="1280-720"
                     data-src="//vimeo.com/180157095?muted=false"
                     data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
