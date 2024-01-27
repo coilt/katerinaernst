@@ -255,11 +255,22 @@ export default function Home() {
                   <img
                     src="katerina-portrait.jpg"
                     alt="Katerina's self-portrait"
+                    style={{
+                      borderRadius: "12px",
+                    }}
                   />
-                  <p className={`my-16 ${paragraphFont.className}`}>
-                    Katerina was born in Kirghiz Soviet Socialist Republic
-                    (USSR) and decided to become a filmmaker after watching the
-                    Alien (1978) for the first time.
+                  <p className={`my-4 ${paragraphFont.className}`}>
+                    Ever since I've picked the camera for the first time many
+                    years ago, it has been my goal to capture what even the eye
+                    can't see. To me it is not just important, it's the whole
+                    point — to grasp the unsayable, the unseeable. Every time I
+                    peer through the viewfinder or into the control monitor, I'm
+                    striving to seize not just image, but the feeling, the
+                    emotion itself.
+                  </p>
+                  <p className={`my-4 ${paragraphFont.className}`}>
+                    That's the ultimate test — did I manage to snatch it? Or is
+                    it just a pretty picture?
                   </p>
                 </div>
               </Tab.Panel>
