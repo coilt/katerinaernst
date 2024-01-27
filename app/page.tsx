@@ -7,7 +7,6 @@ import Masonry from "react-masonry-css";
 import { paragraphFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
-import VideoGallery from "./utils/VideoGallery";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -43,6 +42,7 @@ export default function Home() {
   console.log(images);
 
   const handleVideoThumbnailHover = () => {
+    console.log("Hovered Video Tab");
     setIsVideoHovered(true);
     if (videoThumbnailRef.current) {
       videoThumbnailRef.current.play();
@@ -50,6 +50,7 @@ export default function Home() {
   };
 
   const handleVideoThumbnailLeave = () => {
+    console.log("Left Video Tab");
     setIsVideoHovered(false);
     if (videoThumbnailRef.current) {
       videoThumbnailRef.current.pause();
@@ -57,9 +58,12 @@ export default function Home() {
     }
   };
 
+  console.log("Rendering Home");
+
   return (
     <div className="h-full overflow-auto">
       <Head>
+        <script src="http://localhost:8097"></script>;
         <title>Katerina Ernst Filmmaker | Photographer</title>
         <meta
           name="Katerina Ernst Filmmaker | Photographer"
@@ -166,8 +170,8 @@ export default function Home() {
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                        videoSource="./video/v_thumb_nightfall.webm"
+                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
+                        videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
 
@@ -178,20 +182,20 @@ export default function Home() {
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                        videoSource="./video/v_thumb_nightfall.webm"
+                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
+                        videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
 
                     <a
-                      data-lg-size="1280-720"
+                      data-lg-size="240-160-375, 400-267-480, 1600-1067"
                       data-src="//vimeo.com/180157095?muted=false"
-                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
+                      data-poster="https://redream.in/img/thumbs/thumb-nightfall-c.webp"
                       data-sub-html="<h4>NIGHTFALL</h4>"
                     >
                       <VideoThumbnailComponent
-                        posterImage="https://redream.in/img/thumbs/thumb-nightfall-wraith.webp"
-                        videoSource="./video/v_thumb_nightfall.webm"
+                        posterImage="./thumbs/mobile-thumb-nightfall-wraith-c.jpg"
+                        videoSource="./video/v-thumb-nightfall.webm"
                       />
                     </a>
                   </LightGalleryComponent>
