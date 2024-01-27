@@ -36,19 +36,31 @@ const tabs = [
 
 const handleButtonClick = () => {
   console.log("Button clicked");
+  // Additional logic or state updates here
 };
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
   const [showForm, setShowForm] = useState(false);
+
   const handleButtonClick = () => {
     // Toggle the state to show/hide the form
     setShowForm(!showForm);
   };
 
+  const handleGalleryItemClick = (idx: number) => {
+    lightboxRef.current?.openGallery(idx);
+  };
+
+  const handleGalleryContainerClick = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    // Prevent the click event from reaching the LightGallery container
+    event.stopPropagation();
+  };
+
   const images = getImages();
-  // console.log(images); //
 
   return (
     <div className="h-full overflow-auto custom-scrollbar">
@@ -79,7 +91,10 @@ export default function Home() {
       </div>
 
       <main className="pt-[110px]">
-        <div className="flex flex-col items-center h-full">
+        <div
+          className="flex flex-col items-center h-full"
+          onClick={() => setShowForm(false)}
+        >
           <Tab.Group>
             <Tab.List className="flex items-center gap-12  z-20">
               {tabs.map((tab) => (
@@ -122,14 +137,12 @@ export default function Home() {
                     <div
                       key={image.src}
                       className="relative overflow-hidden image-container"
+                      onClick={() => handleGalleryItemClick(idx)}
                     >
                       <img
                         src={image.src}
                         className="my-2 cursor-pointer hover-zoom"
                         alt={`Image ${idx + 1}`}
-                        onClick={() => {
-                          lightboxRef.current?.openGallery(idx);
-                        }}
                       />
                     </div>
                   ))}
