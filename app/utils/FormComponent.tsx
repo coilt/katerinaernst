@@ -18,20 +18,22 @@ const FormComponent = () => {
     // Additional form submission logic if needed
   };
 
-  const handleClickOutside = (event) => {
-    if (formRef.current && !formRef.current.contains(event.target)) {
+  const handleClickOutside = (event: Event) => {
+    const formElement = formRef.current as HTMLFormElement | null;
+
+    if (formElement && !formElement.contains(event.target as Node)) {
       // Clicked outside the form, hide the form
       setIsFormVisible(false);
     }
   };
 
   useEffect(() => {
-    // Add event listener when component mounts
-    document.addEventListener("click", handleClickOutside);
+    // Add event listener to body when component mounts
+    document.body.addEventListener("click", handleClickOutside);
 
     // Clean up the event listener when component unmounts
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.body.removeEventListener("click", handleClickOutside);
     };
   }, []);
 

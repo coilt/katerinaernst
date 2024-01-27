@@ -34,6 +34,10 @@ const tabs = [
   },
 ];
 
+const handleButtonClick = () => {
+  console.log("Button clicked");
+};
+
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
@@ -44,7 +48,7 @@ export default function Home() {
   };
 
   const images = getImages();
-  console.log(images);
+  // console.log(images); //
 
   return (
     <div className="h-full overflow-auto custom-scrollbar">
