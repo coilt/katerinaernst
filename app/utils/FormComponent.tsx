@@ -19,43 +19,35 @@ const FormComponent = () => {
     register,
     handleSubmit,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormFields>({
     resolver: zodResolver(schema),
   });
 
   const form = useRef<HTMLFormElement>(null);
+  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [thankYouMessage, setThankYouMessage] = useState(false);
 
   const sendEmail: SubmitHandler<FormFields> = async (data) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Data submitted:", data);
-
-      const formElement = form.current as HTMLFormElement;
-
-      emailjs
-        .sendForm(
-          "gmail_katerina_website",
-          "template_edo5tdn",
-          formElement,
-          "e-zxHR-oxydFohlZC"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      await emailjs.sendForm(
+        "gmail_katerina_website",
+        "template_edo5tdn",
+        form.current as HTMLFormElement,
+        "e-zxHR-oxydFohlZC"
+      );
+      console.log("Email sent successfully!");
+      setIsFormVisible(false);
+      reset();
+      setThankYouMessage(true);
     } catch (error) {
+      console.error("Error sending email:", error);
       setError("root", {
         message: "There was an error sending the email.",
       });
     }
   };
-
-  const [isFormVisible, setIsFormVisible] = useState(true);
 
   const handleClickOutside = (event: Event) => {
     if (
@@ -67,12 +59,21 @@ const FormComponent = () => {
   };
 
   useEffect(() => {
+    let timeoutId;
+
+    if (thankYouMessage) {
+      timeoutId = setTimeout(() => {
+        setThankYouMessage(false);
+      }, 3500);
+    }
+
     document.body.addEventListener("click", handleClickOutside);
 
     return () => {
+      clearTimeout(timeoutId);
       document.body.removeEventListener("click", handleClickOutside);
     };
-  }, [form]);
+  }, [thankYouMessage, isFormVisible, form]);
 
   const handleCloseClick = () => {
     setIsFormVisible(false);
@@ -144,7 +145,7 @@ const FormComponent = () => {
                   id="formbutton"
                   disabled={isSubmitting}
                   type="submit"
-                  className="float-right w-20 bg-opacity-15 bg-gray-100 text-white p-2 rounded-md hover:bg-stone-700"
+                  className="float-right w-40 bg-opacity-15 bg-gray-100 text-white p-2 rounded-md hover:bg-stone-700"
                 >
                   {isSubmitting ? "Sending..." : "Send"}
                 </button>
@@ -154,6 +155,17 @@ const FormComponent = () => {
               )}
             </div>
           </form>
+        </div>
+      )}
+
+      {thankYouMessage && (
+        <div
+          id="feedback"
+          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-8 rounded-md z-50"
+        >
+          <p className="text-2xl text-gray-800">
+            The message is sent. Thank you for reaching out.
+          </p>
         </div>
       )}
     </div>

@@ -32,3 +32,10 @@ body {
 .custom-scrollbar {
   overflow-y: scroll;
 }
+
+#contactbutton {
+  border: 0;
+  outline: none;
+  font-family: "Noto_Sans", sans-serif;
+  color: rgba(133, 0, 138, 0.8);
+}

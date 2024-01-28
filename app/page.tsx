@@ -70,6 +70,7 @@ export default function Home() {
           </div>
           <button
             onClick={handleButtonClick}
+            id="contactbutton"
             className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90`}
           >
             Get in touch
