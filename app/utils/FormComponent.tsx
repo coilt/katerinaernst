@@ -95,21 +95,6 @@ const FormComponent = () => {
           >
             <div className="contact-form">
               <div className="flex gap-2">
-                <div className="flex-1">
-                  <label htmlFor="email"></label>
-                  <input
-                    {...register("user_email")}
-                    name="user_email"
-                    placeholder="Email"
-                    className="w-72 p-2 bg-opacity-0 bg-gray-400"
-                    id="email"
-                  />
-                  {errors.user_email && (
-                    <div className="text-red-500">
-                      {errors.user_email.message}
-                    </div>
-                  )}
-                </div>
                 <div className="flex-1 ">
                   <label htmlFor="firstName"></label>
                   <input
@@ -122,6 +107,22 @@ const FormComponent = () => {
                   {errors.user_name && (
                     <div className="text-red-500">
                       {errors.user_name.message}
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex-1">
+                  <label htmlFor="email"></label>
+                  <input
+                    {...register("user_email")}
+                    name="user_email"
+                    placeholder="Email"
+                    className="w-72 p-2 bg-opacity-0 bg-gray-400"
+                    id="email"
+                  />
+                  {errors.user_email && (
+                    <div className="text-red-500">
+                      {errors.user_email.message}
                     </div>
                   )}
                 </div>
