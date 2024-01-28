@@ -31,12 +31,13 @@ const FormComponent = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log("Data submitted:", data);
 
-      // Use emailjs to send the form data
+      const formElement = form.current as HTMLFormElement;
+
       emailjs
         .sendForm(
           "gmail_katerina_website",
           "template_edo5tdn",
-          form.current,
+          formElement,
           "e-zxHR-oxydFohlZC"
         )
         .then(
@@ -57,9 +58,10 @@ const FormComponent = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
 
   const handleClickOutside = (event: Event) => {
-    const formElement = form.current! as HTMLFormElement | null;
-
-    if (formElement && !formElement.contains(event.target as Node)) {
+    if (
+      form.current &&
+      !(form.current as HTMLFormElement).contains(event.target as Node)
+    ) {
       setIsFormVisible(false);
     }
   };
@@ -70,7 +72,7 @@ const FormComponent = () => {
     return () => {
       document.body.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [form]);
 
   const handleCloseClick = () => {
     setIsFormVisible(false);
