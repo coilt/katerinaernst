@@ -24,7 +24,7 @@ const FormComponent = () => {
     resolver: zodResolver(schema),
   });
 
-  const formRef = useRef(null);
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail: SubmitHandler<FormFields> = async (data) => {
     try {
@@ -36,7 +36,7 @@ const FormComponent = () => {
         .sendForm(
           "gmail_katerina_website",
           "template_edo5tdn",
-          formRef.current,
+          form.current,
           "e-zxHR-oxydFohlZC"
         )
         .then(
@@ -57,7 +57,7 @@ const FormComponent = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
 
   const handleClickOutside = (event: Event) => {
-    const formElement = formRef.current! as HTMLFormElement | null;
+    const formElement = form.current! as HTMLFormElement | null;
 
     if (formElement && !formElement.contains(event.target as Node)) {
       setIsFormVisible(false);
@@ -86,7 +86,7 @@ const FormComponent = () => {
             onClick={handleCloseClick}
           />
           <form
-            ref={formRef}
+            ref={form}
             className="contact-container"
             onSubmit={handleSubmit(sendEmail)}
           >
