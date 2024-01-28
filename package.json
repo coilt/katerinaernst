@@ -10,9 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "@headlessui/react": "^1.7.18",
     "@hookform/resolvers": "^3.3.4",
     "@next/font": "^14.0.4",
+    "emailjs": "^4.0.3",
     "git-filter-repo": "^0.0.30",
     "lg-thumbnail": "^1.2.1",
     "lg-video": "^1.4.0",

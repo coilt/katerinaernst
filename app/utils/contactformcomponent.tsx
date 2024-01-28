@@ -1,16 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
+import { SMTPClient } from "emailjs";
+import emailjs from "@emailjs/browser";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import "./fonts.js";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "@emailjs/browser";
 import "./formstyle.css";
 
 type FormFields = z.infer<typeof schema>;
 
 const schema = z.object({
-  user_email: z.string().email(),
-  user_name: z.string().min(2),
+  email: z.string().email(),
+  firstName: z.string().min(2),
   response: z.string().min(10),
 });
 
@@ -24,40 +25,21 @@ const FormComponent = () => {
     resolver: zodResolver(schema),
   });
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
   const formRef = useRef(null);
 
   const sendEmail: SubmitHandler<FormFields> = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Data submitted:", data);
-
-      // Use emailjs to send the form data
-      emailjs
-        .sendForm(
-          "gmail_katerina_website",
-          "template_edo5tdn",
-          formRef.current,
-          "e-zxHR-oxydFohlZC"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      console.log("Sending email:", data);
+      // You can add your email sending logic here using emailjs or any other library
     } catch (error) {
-      setError("root", {
-        message: "There was an error sending the email.",
-      });
+      console.error("Error sending email:", error);
     }
   };
 
-  const [isFormVisible, setIsFormVisible] = useState(true);
-
   const handleClickOutside = (event: Event) => {
-    const formElement = formRef.current! as HTMLFormElement | null;
+    const formElement = formRef.current as HTMLFormElement | null;
 
     if (formElement && !formElement.contains(event.target as Node)) {
       setIsFormVisible(false);
@@ -95,30 +77,26 @@ const FormComponent = () => {
                 <div className="flex-1">
                   <label htmlFor="email"></label>
                   <input
-                    {...register("user_email")}
-                    name="user_email"
+                    {...register("email")}
                     placeholder="Email"
                     className="w-72 p-2 bg-opacity-0 bg-gray-400"
                     id="email"
                   />
-                  {errors.user_email && (
-                    <div className="text-red-500">
-                      {errors.user_email.message}
-                    </div>
+                  {errors.email && (
+                    <div className="text-red-500">{errors.email.message}</div>
                   )}
                 </div>
                 <div className="flex-1 ">
                   <label htmlFor="firstName"></label>
                   <input
-                    {...register("user_name")}
-                    name="user_name"
+                    {...register("firstName")}
                     placeholder="Name"
                     className="w-full p-2 bg-opacity-0 bg-gray-400"
                     id="firstname"
                   />
-                  {errors.user_name && (
+                  {errors.firstName && (
                     <div className="text-red-500">
-                      {errors.user_name.message}
+                      {errors.firstName.message}
                     </div>
                   )}
                 </div>
@@ -128,7 +106,6 @@ const FormComponent = () => {
                 <label htmlFor="response"> </label>
                 <textarea
                   {...register("response")}
-                  name="response"
                   placeholder="Message"
                   className="w-full h-60 p-2 mb-4 rounded-md bg-opacity-10 bg-gray-400"
                   id="response"
@@ -137,7 +114,7 @@ const FormComponent = () => {
                   <div className="text-red-500">{errors.response.message}</div>
                 )}
               </div>
-              <div className="formbutton">
+              <div className=" ">
                 <button
                   id="formbutton"
                   disabled={isSubmitting}
