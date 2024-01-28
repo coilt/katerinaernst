@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap");
+
+#email {
+  border: none;
+  border-bottom: 1px solid #5f5f5f;
+  padding: 5px 10px;
+  outline: none;
+  font-family: "Noto_Sans", sans-serif;
+  color: rgba(224, 224, 224, 0.8);
+  font-weight: 100;
+  line-height: 1.58;
+  letter-spacing: 0.01em;
+  font-size: 100%;
+  padding: 0px;
+}
+
+#firstname {
+  border: none;
+  border-bottom: 1px solid #5f5f5f;
+  padding: 5px 10px;
+  outline: none;
+  font-family: "Noto_Sans", sans-serif;
+  color: rgba(224, 224, 224, 0.8);
+  font-weight: 100;
+  line-height: 1.58;
+  letter-spacing: 0.01em;
+  font-size: 100%;
+  padding: 0px;
+}
+
+#response {
+  border: 0;
+  outline: none;
+  font-family: "Noto_Sans", sans-serif;
+  color: rgba(224, 224, 224, 0.8);
+  font-weight: 100;
+  line-height: 1.58;
+  letter-spacing: 0.01em;
+  font-size: 100%;
+  padding: 10px;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+textarea {
+  resize: none;
+}

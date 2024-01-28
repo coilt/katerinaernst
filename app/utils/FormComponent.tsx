@@ -1,44 +1,60 @@
 import React, { useState, useRef, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 import "./formoverlay.css";
+import "./fonts.js";
+import { zodResolver } from "@hookform/resolvers/zod";
+import "./formstyle.css";
 
-type FormFields = {
-  email: string;
-  message: string;
-  name: string;
-};
+type FormFields = z.infer<typeof schema>;
+
+const schema = z.object({
+  email: z.string().email(),
+  firstName: z.string().min(2),
+  response: z.string().min(10),
+});
 
 const FormComponent = () => {
-  const { register, handleSubmit } = useForm<FormFields>();
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<FormFields>({
+    resolver: zodResolver(schema),
+  });
+
   const [isFormVisible, setIsFormVisible] = useState(true);
   const formRef = useRef(null);
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
-    console.log(data);
-    // Additional form submission logic if needed
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
+    } catch (error) {
+      setError("root", {
+        message: "This email is already taken",
+      });
+    }
   };
 
   const handleClickOutside = (event: Event) => {
     const formElement = formRef.current as HTMLFormElement | null;
 
     if (formElement && !formElement.contains(event.target as Node)) {
-      // Clicked outside the form, hide the form
       setIsFormVisible(false);
     }
   };
 
   useEffect(() => {
-    // Add event listener to body when component mounts
     document.body.addEventListener("click", handleClickOutside);
 
-    // Clean up the event listener when component unmounts
     return () => {
       document.body.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
   const handleCloseClick = () => {
-    // Close button clicked, hide the form
     setIsFormVisible(false);
   };
 
@@ -59,41 +75,57 @@ const FormComponent = () => {
             <div className="contact-form">
               <div className="flex gap-2">
                 <div className="flex-1">
-                  <label htmlFor="email">Email:</label>
+                  <label htmlFor="email"></label>
                   <input
                     {...register("email")}
                     placeholder="Email"
-                    className="w-full p-2 rounded-md border"
+                    className="w-72 p-2 bg-opacity-0 bg-gray-400"
                     id="email"
                   />
+                  {errors.email && (
+                    <div className="text-red-500">{errors.email.message}</div>
+                  )}
                 </div>
-                <div className="flex-1">
-                  <label htmlFor="name">Name:</label>
+                <div className="flex-1 ">
+                  <label htmlFor="firstName"></label>
                   <input
-                    {...register("name")}
+                    {...register("firstName")}
                     placeholder="Name"
-                    className="w-full p-2 rounded-md border"
-                    id="name"
+                    className="w-full p-2 bg-opacity-0 bg-gray-400"
+                    id="firstname"
                   />
+                  {errors.firstName && (
+                    <div className="text-red-500">
+                      {errors.firstName.message}
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="message">Message:</label>
+              <div className="py-4">
+                <label htmlFor="response"> </label>
                 <textarea
-                  {...register("message")}
+                  {...register("response")}
                   placeholder="Message"
-                  className="w-full p-2 mb-4 rounded-md border"
-                  id="message"
+                  className="w-full h-60 p-2 mb-4 rounded-md bg-opacity-10 bg-gray-400"
+                  id="response"
                 />
+                {errors.response && (
+                  <div className="text-red-500">{errors.response.message}</div>
+                )}
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-              >
-                Submit
-              </button>
+              <div className="">
+                <button
+                  disabled={isSubmitting}
+                  type="submit"
+                  className=" float-right w-20 bg-opacity-15 bg-gray-100 text-white p-2 rounded-md hover:bg-stone-700"
+                >
+                  {isSubmitting ? "Sending..." : "Send"}
+                </button>
+              </div>
+              {errors.root && (
+                <div className="text-red-500">{errors.root.message}</div>
+              )}
             </div>
           </form>
         </div>
