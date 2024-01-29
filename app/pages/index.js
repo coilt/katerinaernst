@@ -1,10 +1,10 @@
 // pages/index.js
-import React from 'react';
+import React from "react";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to my website!</h1>
+      <h1>Welcome to Microgravity</h1>
       <p>This is the homepage.</p>
     </div>
   );
