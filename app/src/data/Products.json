@@ -1,0 +1,90 @@
+
+[
+    {
+        "id": 1,
+        "slug": "run-max-88",
+        "image": "shop-01.jpg",
+        "image2": "shop-02.jpg",
+        "image3": "shop-03.jpg",
+        "smImg": "shop-sm01.jpg",
+        "Title": "Run Max 88",
+        "Category" : "For Running",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "180.00"
+    },
+    {
+        "id": 2,
+        "slug": "workout-revolution",
+        "image": "shop-02.jpg",
+        "image2": "shop-04.jpg",
+        "image3": "shop-03.jpg",
+        "smImg": "shop-sm02.jpg",
+        "Title": "Workout Revolution",
+        "Category" : "Workout",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "120.00"
+    },
+    {
+        "id": 3,
+        "slug": "kl-17-bs",
+        "image": "shop-03.jpg",
+        "image2": "shop-02.jpg",
+        "image3": "shop-04.jpg",
+        "smImg": "shop-sm03.jpg",
+        "Title": "KL 17 BS",
+        "Category" : "Training",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "80.00"
+    },
+    {
+        "id": 4,
+        "slug": "flex-armour",
+        "image": "shop-04.jpg",
+        "image2": "shop-02.jpg",
+        "image3": "shop-03.jpg",
+        "smImg": "shop-sm04.jpg",
+        "Title": "Flex Armour",
+        "Category" : "Walking",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "139.99"
+    },
+    {
+        "id": 5,
+        "slug": "men-vision-trainers",
+        "image": "shop-05.jpg",
+        "image2": "shop-04.jpg",
+        "image3": "shop-06.jpg",
+        "smImg": "shop-sm05.jpg",
+        "Title": "Men Vision Trainers",
+        "Category" : "Training",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "56.99"
+    },
+    {
+        "id": 6,
+        "slug": "react-falcon-3",
+        "image": "shop-06.jpg",
+        "image2": "shop-02.jpg",
+        "image3": "shop-03.jpg",
+        "smImg": "shop-sm06.jpg",
+        "Title": "React Falcon 3.0",
+        "Category": "For Running",
+        "categoryTwo": "Workout",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "99.99",
+        "oldPrice": "130.00",
+        "saleText": "Sale"
+    },
+    {
+        "id": 7,
+        "slug": "summit-walking",
+        "image": "shop-03.jpg",
+        "image2": "shop-02.jpg",
+        "image3": "shop-04.jpg",
+        "smImg": "shop-sm03.jpg",
+        "Title": "Summit Walking",
+        "Category" : "Training",
+        "Description": "Why I say old chap that is spiffing he legged easy peasy.",
+        "Price": "60.00"
+    }
+]

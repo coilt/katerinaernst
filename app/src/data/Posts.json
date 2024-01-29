@@ -1,0 +1,122 @@
+
+[
+    {
+        "id": 1,
+        "slug": "ui-vs-ux-whats-the-difference",
+        "image": "blog-1.jpg",
+        "smImg": "blog-sm1.jpg",
+        "bannerImg": "blog-1.jpg",
+        "category": "Design",
+        "title": "UI vs. UX: What’s the difference?",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Completely formulate integrated methods Globally maintain multifunctional products before..."
+    },
+    {
+        "id": 2,
+        "slug": "ux-design-is-shifting-towards-realism",
+        "image": "blog-2.jpg",
+        "smImg": "blog-sm2.jpg",
+        "bannerImg": "blog-2.jpg",
+        "category": "Design",
+        "categoryTwo": "Creative",
+        "title": "UX design is shifting towards realism",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Efficiently strategize just in time process Globally maintain multifunctional products before..."
+    },
+    {
+        "id": 3,
+        "slug": "best-tools-to-collect-design-inspiration",
+        "image": "blog-3.jpg",
+        "smImg": "blog-sm3.jpg",
+        "bannerImg": "blog-3.jpg",
+        "categoryTwo": "Photography",
+        "title": "Best Tools to Collect Design Inspiration",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Progressively grow accurate Synergistically generate cost effective infomediaries without an..."
+    },
+    {
+        "id": 4,
+        "slug": "how-to-create-a-nft-project-and-get-a-money",
+        "image": "blog-4.jpg",
+        "smImg": "blog-sm4.jpg",
+        "bannerImg": "blog-4.jpg",
+        "categoryTwo": "Photography",
+        "title": "How to create a NFT project and get a money",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Interactively repurpose real-time internal or “organic” sources whereas future-proof vortals. Pro..."
+    },
+    {
+        "id": 5,
+        "slug": "top-10-things-to-keep-in-mind",
+        "image": "blog-5.jpg",
+        "smImg": "blog-sm5.jpg",
+        "bannerImg": "blog-5.jpg",
+        "categoryTwo": "Photography",
+        "title": "Top 10 Things to Keep in Mind",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Click or tab on a word. Progressively matrix future-proof process improvements after market..."
+    },
+    {
+        "id": 6,
+        "slug": "the-biggest-design-trends-of-2022",
+        "image": "blog-6.jpg",
+        "smImg": "blog-sm6.jpg",
+        "bannerImg": "blog-6.jpg",
+        "categoryTwo": "Photography",
+        "title": "The Biggest Design Trends of 2022",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Efficiently strategize just in time process Globally maintain multifunctional products before..."
+    },
+    {
+        "id": 7,
+        "slug": "understand-the-background-of-design",
+        "image": "blog-7.jpg",
+        "smImg": "blog-sm7.jpg",
+        "bannerImg": "blog-3.jpg",
+        "categoryTwo": "Photography",
+        "title": "Understand The Background Of Design",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Progressively grow accurate Synergistically generate cost effective infomediaries without an..."
+    },
+    {
+        "id": 8,
+        "slug": "best-tools-to-collect-design-inspiration-2",
+        "image": "blog-2.jpg",
+        "smImg": "blog-sm2.jpg",
+        "bannerImg": "blog-2.jpg",
+        "categoryTwo": "Photography",
+        "title": "Best Tools to Collect Design Inspiration",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Click or tab on a word. Progressively matrix future-proof process improvements after market..."
+    },
+    {
+        "id": 9,
+        "slug": "how-to-create-a-nft-project-and-get-a-money-2",
+        "image": "blog-4.jpg",
+        "smImg": "blog-sm4.jpg",
+        "bannerImg": "blog-4.jpg",
+        "categoryTwo": "Photography",
+        "title": "How to create a NFT project and get a money",
+        "author" : "Mad Sparrow",
+        "authorImg": "author.png",
+        "publishedDate": "August 9, 2022",
+        "description": "Interactively repurpose real-time internal or “organic” sources whereas future-proof vortals. Pro..."
+    }
+
+]
