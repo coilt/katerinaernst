@@ -1,11 +1,7 @@
 // utils/getImages.js
 const getImages = () => {
   try {
-    const imageContext = require.context(
-      "/public/images",
-      false,
-      /\.(jpg|JPG|jpe?g)$/
-    );
+    const imageContext = require.context("/public/images", false, /\.(webp)$/);
     const imageFiles = imageContext.keys();
 
     // Extract file names and create image objects
