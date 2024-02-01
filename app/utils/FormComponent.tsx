@@ -146,7 +146,7 @@ const FormComponent = () => {
                   id="formbutton"
                   disabled={isSubmitting}
                   type="submit"
-                  className="float-right w-40 bg-opacity-15 bg-gray-100 text-white p-2 rounded-md hover:bg-stone-700"
+                  className="float-right w-40 bg-opacity-15 bg-gray-100 text-white p-2 rounded-md hover:bg-stone-700 button-background"
                 >
                   {isSubmitting ? "Sending..." : "Send"}
                 </button>
