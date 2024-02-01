@@ -1,5 +1,5 @@
 import React from "react";
-
+import type { Viewport } from "next";
 import { Antonio, Inter } from "next/font/google";
 import "../styles/globals.css";
 
@@ -39,4 +39,11 @@ export const metadata: Metadata = {
 
   title: "Katerina Ernst Photographer | Filmmaker",
   description: "Katerina Ernst Photograper, filmmaker's portfolio.",
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
+  userScalable: false,
 };
