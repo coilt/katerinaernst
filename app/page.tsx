@@ -111,7 +111,6 @@ export default function Home() {
                 muted
                 loop
                 src="./video/v_thumb_nightfall.mp4"
-                type="video/mp4"
                 style={{
                   width: "100%",
                   height: "100%",
