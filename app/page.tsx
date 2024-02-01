@@ -11,7 +11,6 @@ import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 import FormComponent from "./utils/FormComponent";
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
-import "./utils/mask.css";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -107,7 +106,7 @@ export default function Home() {
                   objectFit: "cover",
                 }}
               >
-                <source src="./video/mask.mp4" type="video/mp4" />
+                <source src="./video/mask.webm" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
