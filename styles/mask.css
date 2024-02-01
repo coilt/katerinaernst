@@ -1,0 +1,6 @@
+.textMask {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask: url("/app/app/utils/mask.svg") center / contain; /* Set the path to your mask SVG file */
+}

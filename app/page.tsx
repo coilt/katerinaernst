@@ -1,16 +1,12 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
-import Image from "next/image";
 import Head from "next/head";
-import Link from "next/link";
 import Masonry from "react-masonry-css";
 import { paragraphFont, footerFont, buttonFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 import FormComponent from "./utils/FormComponent";
-import { Player, ControlBar } from "video-react";
-import "video-react/dist/video-react.css";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -50,6 +46,10 @@ export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
   const [showForm, setShowForm] = useState(false);
+  const handleButtonClick = () => {
+    // Toggle the state to show/hide the form
+    setShowForm(!showForm);
+  };
   const [activeTab, setActiveTab] = useState("Home"); // State to track active tab
 
   const images = getImages();
@@ -73,9 +73,7 @@ export default function Home() {
 
       <div>
         <header className="flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
-          <div className="contents-center font-body text-1xl">
-            Katerina Ernst
-          </div>
+          <div className="logo">Katerina Ernst</div>
           <button
             onClick={handleButtonClick}
             id="contactbutton"
@@ -92,21 +90,37 @@ export default function Home() {
         <div className="flex flex-col items-center h-full">
           {/* Conditionally render video or image based on active tab */}
           {activeTab === "Home" && (
-            <div id="video-container">
-              {/* Use HTML video element with combined masks */}
+            <div
+              style={{
+                height: "100vh",
+                width: "100%",
+                position: "fixed",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                zIndex: -100,
+                overflow: "hidden", // Ensure no scroll bars
+              }}
+            >
+              {/* Use HTML video element */}
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="text-mask"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                  opacity: 0.3,
+                  filter: "blur(245px)",
                 }}
               >
-                <source src="./video/mask.webm" type="video/mp4" />
+                <source
+                  src="./video/v-thumb-nightfall.webm"
+                  type="video/webm"
+                />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -129,7 +143,12 @@ export default function Home() {
             </Tab.List>
             <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
               <Tab.Panel className=" flex justify-center">
-                <div className="w-[600px] "> </div>
+                <div className="w-[1200px]  ">
+                  <p className="my-0 intro text-center animated-gradient">
+                    Katerina Ernst —
+                  </p>
+                  <p className=" my-3 brand text-center accent">Photographer</p>
+                </div>
               </Tab.Panel>
 
               <Tab.Panel>
