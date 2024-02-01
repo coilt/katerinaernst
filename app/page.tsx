@@ -105,16 +105,17 @@ export default function Home() {
             >
               {/* Use HTML video element */}
               <video
+                poster="./thumbs/thumb-nightfall.webp"
                 autoPlay
+                playsInline
                 muted
                 loop
-                playsInline
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   opacity: 0.3,
-                  filter: "blur(245px)",
+                  filter: "blur(200px)",
                 }}
               >
                 <source
