@@ -101,7 +101,7 @@ const FormComponent = () => {
                     {...register("user_name")}
                     name="user_name"
                     placeholder="Name"
-                    className="w-full p-2 bg-opacity-0 bg-gray-400"
+                    className="p-2 bg-opacity-0 bg-gray-400"
                     id="firstname"
                   />
                   {errors.user_name && (
@@ -117,7 +117,7 @@ const FormComponent = () => {
                     {...register("user_email")}
                     name="user_email"
                     placeholder="Email"
-                    className="w-72 p-2 bg-opacity-0 bg-gray-400"
+                    className="p-2 bg-opacity-0 bg-gray-400"
                     id="email"
                   />
                   {errors.user_email && (
