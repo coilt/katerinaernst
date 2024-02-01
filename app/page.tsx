@@ -110,6 +110,8 @@ export default function Home() {
                 playsInline
                 muted
                 loop
+                src="./video/v_thumb_nightfall.mp4"
+                type="video/mp4"
                 style={{
                   width: "100%",
                   height: "100%",
@@ -118,10 +120,6 @@ export default function Home() {
                   filter: "blur(200px)",
                 }}
               >
-                <source
-                  src="./video/v-thumb-nightfall.webm"
-                  type="video/webm"
-                />
                 Your browser does not support the video tag.
               </video>
             </div>
