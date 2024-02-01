@@ -91,3 +91,15 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+
+#intro {
+  border: 0;
+  outline: none;
+  font-family: "Noto_Sans", sans-serif;
+  color: rgba(224, 224, 224, 0.8);
+  font-weight: 100;
+  line-height: 1.58;
+  letter-spacing: 0.01em;
+  font-size: 600%;
+  padding: 10px;
+}

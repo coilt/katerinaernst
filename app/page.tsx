@@ -8,6 +8,8 @@ import { paragraphFont, footerFont, buttonFont } from "./utils/fonts.js";
 import getImages from "./utils/getImages";
 import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 import FormComponent from "./utils/FormComponent";
+import { Player, ControlBar } from "video-react";
+import "video-react/dist/video-react.css";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -20,6 +22,10 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgVideo from "lightgallery/plugins/video";
 
 const tabs = [
+  {
+    key: "Home",
+    display: "Home",
+  },
   {
     key: "Photo",
     display: "Photo",
@@ -43,13 +49,14 @@ export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
   const [showForm, setShowForm] = useState(false);
-  const handleButtonClick = () => {
-    // Toggle the state to show/hide the form
-    setShowForm(!showForm);
-  };
+  const [activeTab, setActiveTab] = useState("Home"); // State to track active tab
 
   const images = getImages();
   console.log(images);
+
+  const handleTabChange = (tabKey: string) => {
+    setActiveTab(tabKey);
+  };
 
   return (
     <div className="h-full overflow-auto custom-scrollbar">
@@ -82,13 +89,50 @@ export default function Home() {
 
       <main className="pt-[110px]">
         <div className="flex flex-col items-center h-full">
+          {/* Conditionally render video or image based on active tab */}
+          {activeTab === "Home" && (
+            <div
+              style={{
+                height: "100vh",
+                width: "100%",
+                position: "fixed",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                zIndex: -100,
+                overflow: "hidden", // Ensure no scroll bars
+              }}
+            >
+              {/* Use HTML video element */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              >
+                <source
+                  src="./video/v-thumb-nightfall.webm"
+                  type="video/webm"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+
           <Tab.Group>
-            <Tab.List className="flex items-center gap-12  z-20">
+            <Tab.List className="flex items-center gap-12 z-20">
               {tabs.map((tab) => (
                 <Tab key={tab.key} className="p-2 uppercase">
                   {({ selected }) => (
                     <span
                       className={selected ? "text-white" : "text-stone-600"}
+                      onClick={() => handleTabChange(tab.key)}
                     >
                       {tab.display}
                     </span>
@@ -97,6 +141,14 @@ export default function Home() {
               ))}
             </Tab.List>
             <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
+              <Tab.Panel className=" flex justify-center">
+                <div className="w-[600px] ">
+                  {" "}
+                  <p className=" my-4 intro">Katerina Ernst —</p>
+                  <p className=" my-4 brand">Photographer</p>
+                </div>
+              </Tab.Panel>
+
               <Tab.Panel>
                 <style jsx>{`
                   .image-container {
@@ -280,7 +332,11 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="h-[60px] flex justify-center items-center text-stone-600">
+      <footer
+        className={`h-[60px] flex justify-center items-center text-stone-600 ${
+          activeTab === "Home" ? "absolute bottom-0 left-0 right-0" : ""
+        }`}
+      >
         <p className={footerFont.className}>Katerina Ernst © 2024</p>
       </footer>
     </div>
