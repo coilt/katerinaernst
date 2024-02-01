@@ -48,7 +48,7 @@ body {
   font-weight: 100;
   line-height: 0.8;
   letter-spacing: 0.01em;
-  font-size: 600%;
+  font-size: 12vw;
   padding: 10px;
 }
 
@@ -61,8 +61,8 @@ body {
   font-style: italic;
   line-height: 1;
   letter-spacing: 0.01em;
-  font-size: 4vw; /* Use viewport width for responsive font size */
-  padding: 2vw; /* Use viewport width for responsive padding */
+  font-size: 8vw; /* Use viewport width for responsive font size */
+  padding: 0vw; /* Use viewport width for responsive padding */
   background: linear-gradient(to top left, rgba(207, 0, 214, 0.6), #6f00ff);
   -webkit-background-clip: text;
   background-clip: text;
@@ -77,5 +77,47 @@ body {
   width: 100%;
   height: 100%;
   z-index: 100;
-  filter: brightness(0.5); /* You can adjust the brightness if needed */
+  filter: brightness(0.4); /* You can adjust the brightness if needed */
+  overflow: "hidden";
+}
+
+#video-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.video-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* styles.css */
+
+.text-mask {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='30%25' dominant-baseline='middle' text-anchor='middle' font-family='Noto Sans' font-weight='900' font-size='1vw' fill='white' text-transform='uppercase'%3EKaterina Ernst%3C/text%3E%3C/svg%3E")
+      center / contain,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Ctext x='45%25' y='50' dominant-baseline='middle' text-anchor='middle' font-family='Noto Sans' font-weight='100' font-size='1vw' fill='white' text-transform='uppercase'%3EPHOTO%3C/text%3E%3Ctext x='44%25' y='55' dominant-baseline='middle' text-anchor='middle' font-family='Noto Sans' font-weight='100' font-size='1vw' fill='white' text-transform='uppercase'%3EGRAPH%3C/text%3E%3Ctext x='30%25' y='60' dominant-baseline='middle' text-anchor='middle' font-family='Noto Sans' font-weight='100' font-size='1vw' fill='white' text-transform='uppercase'%3EER%3C/text%3E%3C/svg%3E")
+      center / contain;
+}
+@media (max-width: 768px) {
+  .text-mask {
+    font-size: 8vw; /* Adjust the font size for smaller screens */
+  }
 }

@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
@@ -10,6 +11,7 @@ import VideoThumbnailComponent from "./utils/VideoThumbnailComponent";
 import FormComponent from "./utils/FormComponent";
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
+import "./utils/mask.css";
 
 // LightGallery
 import LightGalleryComponent from "lightgallery/react";
@@ -91,35 +93,21 @@ export default function Home() {
         <div className="flex flex-col items-center h-full">
           {/* Conditionally render video or image based on active tab */}
           {activeTab === "Home" && (
-            <div
-              style={{
-                height: "100vh",
-                width: "100%",
-                position: "fixed",
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                zIndex: -100,
-                overflow: "hidden", // Ensure no scroll bars
-              }}
-            >
-              {/* Use HTML video element */}
+            <div id="video-container">
+              {/* Use HTML video element with combined masks */}
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                className="text-mask"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                 }}
               >
-                <source
-                  src="./video/v-thumb-nightfall.webm"
-                  type="video/webm"
-                />
+                <source src="./video/mask.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -142,11 +130,7 @@ export default function Home() {
             </Tab.List>
             <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
               <Tab.Panel className=" flex justify-center">
-                <div className="w-[600px] ">
-                  {" "}
-                  <p className=" my-4 intro">Katerina Ernst —</p>
-                  <p className=" my-4 brand">Photographer</p>
-                </div>
+                <div className="w-[600px] "> </div>
               </Tab.Panel>
 
               <Tab.Panel>
