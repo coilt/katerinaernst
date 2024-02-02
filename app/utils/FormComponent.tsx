@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useClickAway } from "@uidotdev/usehooks";
 import { z } from "zod";
 import "./fonts.js";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,7 +15,11 @@ const schema = z.object({
   response: z.string().min(10),
 });
 
-const FormComponent = () => {
+interface FormComponentProps {
+  onClose: () => void;
+}
+
+const FormComponent: React.FC<FormComponentProps> = ({ onClose }) => {
   const form = useRef<HTMLFormElement>(null);
   const {
     register,
@@ -29,6 +34,21 @@ const FormComponent = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [thankYouMessage, setThankYouMessage] = useState(false);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (form.current && !form.current.contains(event.target as Node)) {
+        setIsFormVisible(false);
+        onClose(); // Notify the parent component to close the form
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   const sendEmail: SubmitHandler<FormFields> = async (data) => {
     try {
       await emailjs.sendForm(
@@ -39,6 +59,7 @@ const FormComponent = () => {
       );
       console.log("Email sent successfully!");
       setIsFormVisible(false);
+      onClose(); // Close the form immediately after successful submission
       reset();
       setThankYouMessage(true);
     } catch (error) {
@@ -49,49 +70,26 @@ const FormComponent = () => {
     }
   };
 
-  const handleClickOutside = (event: Event) => {
-    if (
-      form.current &&
-      form.current.contains(event.target as Node) &&
-      !form.current.contains(event.target as Node)
-    ) {
-      setIsFormVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [isFormVisible]);
-
   useEffect(() => {
     let timeoutId;
 
     if (thankYouMessage) {
       timeoutId = setTimeout(() => {
         setThankYouMessage(false);
+        onClose(); // Notify the parent component to close the form after showing the "thank you" message
       }, 3500);
     }
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [thankYouMessage]);
-
-  const handleCloseClick = () => {
-    setIsFormVisible(false);
-  };
+  }, [thankYouMessage, onClose]);
 
   return (
     <div id="form-wrapper">
+      <div className="blur-container"></div>
       {isFormVisible && (
-        <div
-          className="form-overlay "
-          style={{ pointerEvents: isFormVisible ? "auto" : "none" }}
-        >
+        <div>
           <form
             ref={form}
             className="contact-container"

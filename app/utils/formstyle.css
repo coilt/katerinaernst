@@ -54,20 +54,6 @@ textarea {
   opacity: 1;
 }
 
-.form-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(3, 3, 3, 0.836);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(50px); /* Adjust the blur amount as needed */
-}
-
 .contact-container {
   background-color: rgba(26, 26, 26, 0.137);
   padding: 20px;
