@@ -2,32 +2,25 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-  --brightness-level: 100;
-}
-
 @layer {
   html,
   body {
     height: 100%;
 
-    body {
-      background: linear-gradient(45deg, #300202, #04053f);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s infinite;
-      filter: brightness(var(--brightness-level) %);
-    }
+    background: radial-gradient(#300202, #04053f);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite;
+  }
 
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 100%;
-      }
-      50% {
-        background-position: 100% 0%;
-      }
-      100% {
-        background-position: 0% 100%;
-      }
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 100%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
     }
   }
 

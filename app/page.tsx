@@ -104,23 +104,6 @@ export default function Home() {
               }}
             >
               {/* Use HTML video element */}
-              <video
-                poster="./thumbs/thumb-nightfall.webp"
-                autoPlay
-                playsInline
-                muted
-                loop
-                src="./video/abstract.mp4"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  opacity: 0.3,
-                  filter: "blur(200px)",
-                }}
-              >
-                Your browser does not support the video tag.
-              </video>
             </div>
 
             <Tab.Group>
