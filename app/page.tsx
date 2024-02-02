@@ -89,40 +89,40 @@ export default function Home() {
         <main className="pt-[110px]">
           <div className="flex flex-col items-center h-full">
             {/* Conditionally render video or image based on active tab */}
-            {activeTab === "Home" && (
-              <div
+
+            <div
+              style={{
+                height: "100vh",
+                width: "100%",
+                position: "fixed",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                zIndex: -100,
+                overflow: "hidden", // Ensure no scroll bars
+              }}
+            >
+              {/* Use HTML video element */}
+              <video
+                poster="./thumbs/thumb-nightfall.webp"
+                autoPlay
+                playsInline
+                muted
+                loop
+                src="./video/abstract.mp4"
                 style={{
-                  height: "100vh",
                   width: "100%",
-                  position: "fixed",
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0,
-                  zIndex: -100,
-                  overflow: "hidden", // Ensure no scroll bars
+                  height: "100%",
+                  objectFit: "cover",
+                  opacity: 0.3,
+                  filter: "blur(200px)",
                 }}
               >
-                {/* Use HTML video element */}
-                <video
-                  poster="./thumbs/thumb-nightfall.webp"
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
-                  src="./video/v_thumb_nightfall.mp4"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    opacity: 0.3,
-                    filter: "blur(200px)",
-                  }}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            )}
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
             <Tab.Group>
               <Tab.List className="flex items-center gap-12 z-20">
                 {tabs.map((tab) => (
