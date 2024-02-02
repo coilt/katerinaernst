@@ -37,23 +37,50 @@ const tabs = [
   },
 ];
 
-const handleButtonClick = () => {
-  console.log("Button clicked");
-  // Additional logic or state updates here
-};
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM Loaded");
+  const divs = document.querySelectorAll("div");
+  console.log("Selected divs:", divs);
+
+  function logText(e) {
+    console.log("Clicked element:", this);
+    console.log("Clicked element classes:", this.classList.value);
+  }
+
+  divs.forEach((div) => div.addEventListener("click", logText));
+});
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
+  const formWrapperRef = useRef<HTMLDivElement>(null); // Add this line
 
   const [showForm, setShowForm] = useState(false);
   const handleButtonClick = () => {
-    // Toggle the state to show/hide the form
     setShowForm(!showForm);
   };
+
+  const handleClickOutside = (event: Event) => {
+    if (
+      formWrapperRef.current &&
+      formWrapperRef.current.contains(event.target as Node) &&
+      !document.getElementById("contactbutton")?.contains(event.target as Node)
+    ) {
+      // Close the form if clicked outside
+      setShowForm(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showForm]);
+
   const [activeTab, setActiveTab] = useState("Home"); // State to track active tab
 
   const images = getImages();
-  console.log(images);
 
   const handleTabChange = (tabKey: string) => {
     setActiveTab(tabKey);
@@ -71,7 +98,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
+      <div
+        id="outer"
+        ref={formWrapperRef}
+        style={{ pointerEvents: showForm ? "none" : "auto" }}
+      >
         <header className="flex fixed w-full top-0 z-10 justify-between items-center h-[90px] px-10">
           <div className="logo">Katerina Ernst</div>
           <button

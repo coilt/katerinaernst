@@ -2,12 +2,9 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "noImplicitAny": false,
+    "noImplicitThis": false,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,9 +22,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -37,8 +32,6 @@
     ".next/types/**/*.ts",
     "app/utils/getImages.js"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "allowImportingTsExtensions": true
 }

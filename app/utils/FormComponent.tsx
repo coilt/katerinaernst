@@ -15,6 +15,7 @@ const schema = z.object({
 });
 
 const FormComponent = () => {
+  const form = useRef<HTMLFormElement>(null);
   const {
     register,
     handleSubmit,
@@ -25,7 +26,6 @@ const FormComponent = () => {
     resolver: zodResolver(schema),
   });
 
-  const form = useRef<HTMLFormElement>(null);
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [thankYouMessage, setThankYouMessage] = useState(false);
 
@@ -52,11 +52,20 @@ const FormComponent = () => {
   const handleClickOutside = (event: Event) => {
     if (
       form.current &&
-      !(form.current as HTMLFormElement).contains(event.target as Node)
+      form.current.contains(event.target as Node) &&
+      !form.current.contains(event.target as Node)
     ) {
       setIsFormVisible(false);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isFormVisible]);
 
   useEffect(() => {
     let timeoutId;
@@ -67,27 +76,22 @@ const FormComponent = () => {
       }, 3500);
     }
 
-    document.body.addEventListener("click", handleClickOutside);
-
     return () => {
       clearTimeout(timeoutId);
-      document.body.removeEventListener("click", handleClickOutside);
     };
-  }, [thankYouMessage, isFormVisible, form]);
+  }, [thankYouMessage]);
 
   const handleCloseClick = () => {
     setIsFormVisible(false);
   };
 
   return (
-    <div>
+    <div id="form-wrapper">
       {isFormVisible && (
-        <div className="form-overlay">
-          <button
-            type="button"
-            className="close-button"
-            onClick={handleCloseClick}
-          />
+        <div
+          className="form-overlay "
+          style={{ pointerEvents: isFormVisible ? "auto" : "none" }}
+        >
           <form
             ref={form}
             className="contact-container"
