@@ -58,7 +58,7 @@ export default function Home() {
 
   const [activeTab, setActiveTab] = useState("Home"); // State to track active tab
   const images = getImages();
-  console.log(images);
+
   const handleTabChange = (tabKey: string) => {
     setActiveTab(tabKey);
   };
@@ -78,8 +78,7 @@ export default function Home() {
           <div className="logo">Katerina Ernst</div>
           <button
             onClick={handleButtonClick}
-            id="contactbutton"
-            className={`rounded-3xl bg-white text-stone-800 px-4 py-3 hover:bg-opacity-90`}
+            className=" w-20 rounded-md primary-button"
           >
             Contact
           </button>
@@ -89,27 +88,45 @@ export default function Home() {
         <main className="pt-[110px]">
           <div className="flex flex-col items-center h-full">
             {/* Conditionally render video or image based on active tab */}
-
-            <div
-              style={{
-                height: "100vh",
-                width: "100%",
-                position: "fixed",
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                zIndex: -100,
-                overflow: "hidden", // Ensure no scroll bars
-              }}
-            >
-              {/* Use HTML video element */}
-            </div>
-
+            {activeTab === "Home" && (
+              <div
+                style={{
+                  height: "100vh",
+                  width: "100%",
+                  position: "fixed",
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  zIndex: 1,
+                  overflow: "hidden", // Ensure no scroll bars
+                }}
+              >
+                {/* Use HTML video element */}
+                <video
+                  poster="./thumbs/thumb-nightfall.webp"
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                  src="./video/v_thumb_nightfall.mp4"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    opacity: 0.3,
+                  }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
+            {/* Gradient overlay */}
+            <div className="gradient-overlay"> </div>
             <Tab.Group>
-              <Tab.List className="flex items-center gap-12 z-20">
+              <Tab.List className="flex items-center gap-12 z-20 navbar ">
                 {tabs.map((tab) => (
-                  <Tab key={tab.key} className="p-2 uppercase">
+                  <Tab key={tab.key} className=" uppercase navbar">
                     {({ selected }) => (
                       <span
                         className={selected ? "text-white" : "text-stone-600"}
@@ -124,11 +141,10 @@ export default function Home() {
               <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
                 <Tab.Panel className=" flex justify-center">
                   <div className="w-[1200px]  ">
-                    <p className="my-0 intro text-center animated-gradient">
-                      Katerina Ernst —
-                    </p>
-                    <p className=" my-3 brand text-center accent">
-                      Photographer
+                    <p className=" hero-text animated-gradient text-center">
+                      I create photos <br />
+                      that make you see yourself <br />
+                      different
                     </p>
                   </div>
                 </Tab.Panel>
@@ -305,8 +321,8 @@ export default function Home() {
           </div>
         </main>
         <footer
-          className={`h-[60px] flex justify-center items-center text-stone-600 ${
-            activeTab === "Home" ? "absolute bottom-0 left-0 right-0" : ""
+          className={`h-[60px] flex justify-center items-center text-white-100 footer   ${
+            activeTab === "Home" ? "absolute bottom-10 left-0 right-0  " : ""
           }`}
         >
           <p className={footerFont.className}>Katerina Ernst © 2024</p>
