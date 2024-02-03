@@ -123,13 +123,6 @@ body {
   font-size: 1vw;
 }
 
-/* Apply different styles for screens smaller than 600px */
-@media (max-width: 600px) {
-  .logo {
-    font-size: 4vw; /* Adjust the font size for smaller screens */
-  }
-}
-
 /* Apply different styles for screens between 601px and 900px */
 @media (min-width: 601px) and (max-width: 900px) {
   .logo {
@@ -137,27 +130,38 @@ body {
   }
 }
 
-/* Apply different styles for screens larger than 900px */
-@media (min-width: 901px) {
+/* Apply different styles for screens between 601px and 900px */
+@media (min-width: 901px) and (max-width: 1400) {
   .logo {
-    font-size: 1.2w; /* Adjust the font size for larger screens */
+    font-size: 4vw; /* Adjust the font size for medium screens */
   }
 }
 
-/* Apply different styles for screens smaller than 600px */
-@media (max-width: 600px) {
+/* Apply different styles for screens larger than 900px */
+@media (min-width: 1401) and (max-width: 1920) {
+  .logo {
+    font-size: 2vw; /* Adjust the font size for larger screens */
+  }
+}
+
+/* Apply different styles for screens larger than 900px */
+@media (min-width: 1401) and (max-width: 1920) {
+  .logo {
+    font-size: 2vw; /* Adjust the font size for larger screens */
+  }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
   .hero-text {
-    font-size: 4vw; /* Adjust the font size for smaller screens */
+    font-size: 4vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;
-
     text-transform: uppercase;
     font-weight: 100;
     font-style: normal;
     line-height: 1.3;
     letter-spacing: 0.01em;
-
     padding: 0vw; /* Use viewport width for responsive padding */
     position: relative;
     top: 200%;
@@ -166,20 +170,55 @@ body {
   }
 }
 
-/* Apply different styles for screens between 601px and 900px */
 @media (min-width: 601px) and (max-width: 900px) {
   .hero-text {
     font-size: 4vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;
-
     text-transform: uppercase;
     font-weight: 100;
     font-style: normal;
     line-height: 1.3;
     letter-spacing: 0.01em;
+    padding: 0vw; /* Use viewport width for responsive padding */
+    position: relative;
+    top: 200%;
+    left: 50%; /* Move the element 50% to the right */
+    transform: translateX(-50%); /* Adjust to center it precisely */
+  }
+}
 
+@media (min-width: 901px) and (max-width: 1000) {
+  .hero-text {
+    font-size: 4vw; /* Adjust the font size for medium screens */
+    border: 0;
+    outline: none;
+    font-family: "Noto_Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    padding: 0vw; /* Use viewport width for responsive padding */
+    position: relative;
+    top: 200%;
+    left: 50%; /* Move the element 50% to the right */
+    transform: translateX(-50%); /* Adjust to center it precisely */
+  }
+}
+
+@media (min-width: 1001) and (max-width: 1200) {
+  .hero-text {
+    font-size: 4vw; /* Adjust the font size for medium screens */
+    border: 0;
+    outline: none;
+    font-family: "Noto_Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
     padding: 0vw; /* Use viewport width for responsive padding */
     position: relative;
     top: 200%;
@@ -189,9 +228,9 @@ body {
 }
 
 /* Large screens */
-@media (min-width: 901px) {
+@media (min-width: 1601px) {
   .hero-text {
-    font-size: 1.2vw; /* Adjust the font size for larger screens */
+    font-size: 2vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;
@@ -202,7 +241,7 @@ body {
     letter-spacing: 0.01em;
     padding: 0vw; /* Use viewport width for responsive padding */
     position: relative;
-    top: 200%;
+    top: 120%;
     left: 50%; /* Move the element 50% to the right */
     transform: translateX(-50%); /* Adjust to center it precisely */
   }
