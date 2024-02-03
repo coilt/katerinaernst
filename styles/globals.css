@@ -191,7 +191,7 @@ body {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1000) {
+@media (min-width: 901px) and (max-width: 1000px) {
   .hero-text {
     font-size: 4vw; /* Adjust the font size for medium screens */
     border: 0;
@@ -210,9 +210,9 @@ body {
   }
 }
 
-@media (min-width: 1001) and (max-width: 1200) {
+@media (min-width: 1001px) and (max-width: 1200px) {
   .hero-text {
-    font-size: 4vw; /* Adjust the font size for medium screens */
+    font-size: 2vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;
