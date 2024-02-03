@@ -250,7 +250,20 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient -10s ease infinite;
+  animation: gradient 10s ease infinite;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .button-background {
@@ -357,19 +370,6 @@ body {
 /* Hover state */
 .primary-button:hover {
   background: linear-gradient(45deg, #e2065a, #7d01f0);
-}
-
-/* Gradient animation keyframes */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .gradient-overlay {
