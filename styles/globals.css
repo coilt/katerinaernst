@@ -349,17 +349,13 @@ body {
 }
 
 .primary-button {
-  padding: 10px;
+  padding: 8px;
   font-family: "Noto Sans", sans-serif;
-  font-weight: 400;
-  color: #eeeeee;
   cursor: pointer;
   background: linear-gradient(-45deg, #ee7752, #e2065a, #7d01f0, #23d5ab);
   background-size: 400% 400%;
   background-clip: border-box;
-  border-radius: 8px; /* Add rounded corners */
-  animation: gradient 10s ease infinite; /* Apply gradient animation */
-  transition: background 0.3s ease; /* Add transition for smooth hover effect */
+  animation: gradient 10s ease infinite;
 }
 
 /* Hover state */
@@ -399,4 +395,40 @@ body {
 
 .footer {
   z-index: 1000;
+}
+
+.header {
+  /* Default padding for screens larger than 1600px */
+
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-top: 10px;
+
+  /* Media query for screens between 1201px and 1600px */
+  @media (max-width: 1600px) and (min-width: 1201px) {
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 0px;
+  }
+
+  /* Media query for screens between 901px and 1200px */
+  @media (max-width: 1200px) and (min-width: 901px) {
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 0px;
+  }
+
+  /* Media query for screens between 601px and 900px */
+  @media (max-width: 900px) and (min-width: 601px) {
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 0px;
+  }
+
+  /* Media query for screens up to 600px */
+  @media (max-width: 600px) {
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 0px;
+  }
 }

@@ -74,7 +74,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <header className="flex fixed w-full top-0 z-10 justify-between items-center h-[80px] px-10">
+        <header className="flex fixed w-full top-0 z-10 justify-between items-center h-[60px] header ">
           <div className="logo">Katerina Ernst</div>
           <button
             onClick={handleButtonClick}
