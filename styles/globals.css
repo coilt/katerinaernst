@@ -124,16 +124,32 @@ body {
 }
 
 /* Apply different styles for screens between 601px and 900px */
-@media (min-width: 901px) and (max-width: 1400) {
+@media (min-width: 901px) and (max-width: 1400px) {
   .logo {
-    font-size: 4vw; /* Adjust the font size for medium screens */
+    font-size: 2vw; /* Adjust the font size for medium screens */
+    background: linear-gradient(-45deg, #ee7752, #e2065a, #7d01f0, #23d5ab);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 10s ease infinite;
+    font-family: "Noto_Sans", sans-serif;
+    font-weight: 600;
   }
 }
 
 /* Apply different styles for screens larger than 900px */
-@media (min-width: 1401) and (max-width: 1920) {
+@media (min-width: 1401px) {
   .logo {
-    font-size: 2vw; /* Adjust the font size for larger screens */
+    font-size: 1vw; /* Adjust the font size for larger screens */
+    background: linear-gradient(-45deg, #ee7752, #e2065a, #7d01f0, #23d5ab);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 10s ease infinite;
+    font-family: "Noto_Sans", sans-serif;
+    font-weight: 600;
   }
 }
 
