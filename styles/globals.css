@@ -31,10 +31,6 @@ body {
   }
 }
 
-.custom-scrollbar {
-  overflow-y: scroll;
-}
-
 #contactbutton {
   border: 0;
   outline: none;
@@ -232,7 +228,7 @@ body {
 /* Large screens */
 @media (min-width: 1601px) {
   .hero-text {
-    font-size: 2vw; /* Adjust the font size for medium screens */
+    font-size: 1.2vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;
@@ -351,6 +347,7 @@ body {
 .primary-button {
   padding: 8px;
   font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
   cursor: pointer;
   background: linear-gradient(-45deg, #ee7752, #e2065a, #7d01f0, #23d5ab);
   background-size: 400% 400%;
@@ -377,7 +374,7 @@ body {
 }
 
 .gradient-overlay {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -391,10 +388,13 @@ body {
   font-family: "Exo_2", sans-serif;
   font-weight: 100;
   color: #eeeeee;
+  text-transform: uppercase;
 }
 
 .footer {
   z-index: 1000;
+  color: #808080;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -428,7 +428,11 @@ body {
   /* Media query for screens up to 600px */
   @media (max-width: 600px) {
     padding-left: 10px;
-    padding-right: 30px;
+    padding-right: 10px;
     padding-top: 0px;
   }
+}
+
+.custom-scrollbar {
+  overflow-y: scroll;
 }

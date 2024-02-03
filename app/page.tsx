@@ -104,7 +104,7 @@ export default function Home() {
               >
                 {/* Use HTML video element */}
                 <video
-                  poster="./thumbs/thumb-nightfall.webp"
+                  poster=" "
                   autoPlay
                   playsInline
                   muted
@@ -126,7 +126,7 @@ export default function Home() {
             <Tab.Group>
               <Tab.List className="flex items-center gap-12 z-20 navbar ">
                 {tabs.map((tab) => (
-                  <Tab key={tab.key} className=" uppercase navbar">
+                  <Tab key={tab.key} className="navbar">
                     {({ selected }) => (
                       <span
                         className={selected ? "text-white" : "text-stone-600"}
@@ -148,7 +148,7 @@ export default function Home() {
                     </p>
                   </div>
                 </Tab.Panel>
-                <Tab.Panel>
+                <Tab.Panel className="z-10">
                   <style jsx>{`
                     .image-container {
                       overflow: hidden; /* Clip the content to the rounded boundaries */
@@ -321,11 +321,11 @@ export default function Home() {
           </div>
         </main>
         <footer
-          className={`h-[60px] flex justify-center items-center text-white-100 footer   ${
+          className={`h-[60px] flex justify-center items-center text-white-100      ${
             activeTab === "Home" ? "absolute bottom-10 left-0 right-0  " : ""
           }`}
         >
-          <p className={footerFont.className}>Katerina Ernst © 2024</p>
+          <p className="footer">Katerina Ernst © 2024</p>
         </footer>
       </div>
     </div>
