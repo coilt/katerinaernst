@@ -400,10 +400,11 @@ body {
 
 .header {
   /* Default padding for screens larger than 1600px */
-
+  @media (min-width: 1601px) {
   padding-left: 10px;
   padding-right: 30px;
   padding-top: 10px;
+   }
 
   /* Media query for screens between 1201px and 1600px */
   @media (max-width: 1600px) and (min-width: 1201px) {
@@ -433,6 +434,8 @@ body {
     padding-top: 0px;
   }
 }
+
+
 
 .custom-scrollbar {
   overflow-y: scroll;
