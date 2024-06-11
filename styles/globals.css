@@ -207,7 +207,7 @@ body {
 
 @media (min-width: 1001px) and (max-width: 1200px) {
   .hero-text {
-    font-size: 2vw; /* Adjust the font size for medium screens */
+    font-size: 4vw; /* Adjust the font size for medium screens */
     border: 0;
     outline: none;
     font-family: "Noto_Sans", sans-serif;

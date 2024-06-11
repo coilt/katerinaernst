@@ -21,7 +21,7 @@ export default function RootLayout({
 import { Metadata } from "next";
 export const metadata: Metadata = {
   openGraph: {
-    title: "Filmmaker | Photographer",
+    title: "Filmmaker",
     description: "You're gonna carry that weight",
     url: "https://KaterinaErnst.com",
     siteName: "Katerina Ernst",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  title: "Katerina Ernst Photographer | Filmmaker",
-  description: "Katerina Ernst Photograper, filmmaker's portfolio.",
+  title: "Katerina Ernst Filmmaker",
+  description: "Katerina Ernst, filmmaker's portfolio.",
 };
 
 export const viewport: Viewport = {

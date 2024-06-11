@@ -28,8 +28,8 @@ const tabs = [
     display: "Photo",
   },
   {
-    key: "Video",
-    display: "Video",
+    key: "Film",
+    display: "Film",
   },
   {
     key: "about me",
@@ -65,10 +65,10 @@ export default function Home() {
   return (
     <div className="h-full overflow-auto custom-scrollbar">
       <Head>
-        <title>Katerina Ernst Filmmaker | Photographer</title>
+        <title>Katerina Ernst Filmmaker </title>
         <meta
-          name="Katerina Ernst Filmmaker | Photographer"
-          content="Katerina Ernst Filmmaker Photographer portfolio site"
+          name="Katerina Ernst Filmmaker"
+          content="Katerina Ernst Filmmaker portfolio site"
         />
         <meta property="og:image" content="<generated>" />
         <link rel="icon" href="/favicon.ico" />
@@ -141,11 +141,11 @@ export default function Home() {
               <Tab.Panels className="h-full w-full max-w-[1200px] p-2 sm:p-4 my-8 bg-opacity-30 content-center">
                 <Tab.Panel className=" flex justify-center">
                   <div className="w-[1200px]  ">
-                    <p className=" hero-text animated-gradient text-center">
+                    {/* <p className=" hero-text animated-gradient text-center">
                       I create photos <br />
                       that make you see yourself <br />
                       different
-                    </p>
+                    </p> */}
                   </div>
                 </Tab.Panel>
                 <Tab.Panel className="z-10">
