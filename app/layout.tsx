@@ -28,22 +28,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Filmmaker',
     description: "You're gonna carry that weight",
-    url: 'https://KaterinaErnst.com',
-    siteName: 'Katerina Ernst',
+    url: 'https://monkimonki.co',
+    siteName: 'Kat Ernst',
     images: [
       {
-        url: 'https://www.katerinaernst.com/opengraph-image.jpg',
+        url: 'https://www.monkimonki.co/opengraph-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Katerina Ernst Portfolio',
+        alt: 'Kat Ernst Portfolio',
       },
     ],
     locale: 'en_US',
     type: 'website',
   },
 
-  title: 'Katerina Ernst Filmmaker',
-  description: "Katerina Ernst, filmmaker's portfolio.",
+  title: 'Kat Ernst Filmmaker and Photographer',
+  description: "Kat Ernst, filmmaker and photographer's portfolio.",
 }
 
 export const viewport: Viewport = {
